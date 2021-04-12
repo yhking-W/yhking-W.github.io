@@ -23,23 +23,27 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:&quot;ture&quot;,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;}}</script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yhing Person Site">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+<meta name="description" content="MySQL is a relational database management system, developed by Sweden’s MySQL AB, which is a product of Oracle. MySQL is one of the most popular Relational Database Management systems. In terms of Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux install MySQL">
+<meta property="og:url" content="http://example.com/2021/04/12/mysql-linux-install/index.html">
 <meta property="og:site_name" content="Yhing Person Site">
+<meta property="og:description" content="MySQL is a relational database management system, developed by Sweden’s MySQL AB, which is a product of Oracle. MySQL is one of the most popular Relational Database Management systems. In terms of Web">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-12T14:57:54.498Z">
+<meta property="article:modified_time" content="2021-04-12T15:26:35.502Z">
 <meta property="article:author" content="yhking">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/archives/2021/">
+<link rel="canonical" href="http://example.com/2021/04/12/mysql-linux-install/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;archives&#x2F;2021&#x2F;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;en&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;04&#x2F;12&#x2F;mysql-linux-install&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;12&#x2F;mysql-linux-install&#x2F;&quot;,&quot;title&quot;:&quot;Linux install MySQL&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>Archive | Yhing Person Site</title><script src="/js/config.js"></script>
+<title>Linux install MySQL | Yhing Person Site</title><script src="/js/config.js"></script>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -107,7 +111,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -120,6 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-The-dependency-that-is-needed"><span class="nav-number">1.</span> <span class="nav-text">1. The dependency that is needed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Download-MySQL"><span class="nav-number">2.</span> <span class="nav-text">2. Download MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Unzip-the-downloaded-file"><span class="nav-number">3.</span> <span class="nav-text">3. Unzip the downloaded file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Install-MySQL"><span class="nav-number">4.</span> <span class="nav-text">4. Install MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Login-MySQL"><span class="nav-number">5.</span> <span class="nav-text">5. Login MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Other"><span class="nav-number">6.</span> <span class="nav-text">6. Other</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Change-the-password"><span class="nav-number">6.1.</span> <span class="nav-text">Change the password</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Modify-access-address"><span class="nav-number">6.2.</span> <span class="nav-text">Modify access address</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Restart-the-MySQL"><span class="nav-number">7.</span> <span class="nav-text">7. Restart the MySQL</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -186,89 +191,140 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 3 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/12/mysql-linux-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="yhking">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yhing Person Site">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux install MySQL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-04-12 22:57:54 / Modified: 23:26:35" itemprop="dateCreated datePublished" datetime="2021-04-12T22:57:54+08:00">2021-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Install-software/" itemprop="url" rel="index"><span itemprop="name">Install software</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>MySQL is a relational database management system, developed by Sweden’s MySQL AB, which is a product of Oracle. MySQL is one of the most popular Relational Database Management systems. In terms of Web application, MySQL is one of the best RDBMS applications.</p>
+<span id="more"></span>
+
+<h3 id="1-The-dependency-that-is-needed"><a href="#1-The-dependency-that-is-needed" class="headerlink" title="1. The dependency that is needed"></a>1. The dependency that is needed</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libmecab2 libjson-perl</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Download-MySQL"><a href="#2-Download-MySQL" class="headerlink" title="2. Download MySQL"></a>2. Download MySQL</h3><p>Official website to <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">download</a></p>
+<p>Debian <a target="_blank" rel="noopener" href="https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.23-1debian10_amd64.deb-bundle.tar">download</a> MySQL8.0</p>
+<h3 id="3-Unzip-the-downloaded-file"><a href="#3-Unzip-the-downloaded-file" class="headerlink" title="3. Unzip the downloaded file"></a>3. Unzip the downloaded file</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar zxvf XXX.tar</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Install-MySQL"><a href="#4-Install-MySQL" class="headerlink" title="4. Install MySQL"></a>4. Install MySQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dpkg -i mysql-&#123;common,community-client,community-client-plugins,community-client-core,client,community-server,community-server-core,server&#125;_*.deb</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Login-MySQL"><a href="#5-Login-MySQL" class="headerlink" title="5. Login MySQL"></a>5. Login MySQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -uroot -p</span><br><span class="line">xxxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Other"><a href="#6-Other" class="headerlink" title="6. Other"></a>6. Other</h3><h4 id="Change-the-password"><a href="#Change-the-password" class="headerlink" title="Change the password"></a>Change the password</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;123456&#39;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Modify-access-address"><a href="#Modify-access-address" class="headerlink" title="Modify access address"></a>Modify access address</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; UPDATE mysql.user set host &#x3D; &#39;%&#39;,plugin&#x3D;&#39;mysql_native_password&#39; where user&#x3D;&#39;root&#39;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-Restart-the-MySQL"><a href="#7-Restart-the-MySQL" class="headerlink" title="7. Restart the MySQL"></a>7. Restart the MySQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart mysql</span><br></pre></td></tr></table></figure>
+
+
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-12T22:57:54+08:00"
-              content="2021-04-12">
-          04-12
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/username">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/12/mysql-linux-install/" itemprop="url">
-            <span itemprop="name">Linux install MySQL</span>
-          </a>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/channel_name">
+          <span class="icon">
+            <i class="fab fa-telegram"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
       </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-12T22:50:59+08:00"
-              content="2021-04-12">
-          04-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/12/pip-linux-install/" itemprop="url">
-            <span itemprop="name">Linux install pip</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-04-12T21:19:21+08:00"
-              content="2021-04-12">
-          04-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/12/use-git/" itemprop="url">
-            <span itemprop="name">THE USE OF GIT</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
-    </div>
   </div>
-  
-  
-  
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/12/pip-linux-install/" rel="next" title="Linux install pip">
+                  Linux install pip <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 <script src="/js/comments.js"></script>
 </div>
   </main>
