@@ -42,10 +42,10 @@
     --btn-default-hover-bg: #666;
     --btn-default-hover-color: #ccc;
     --btn-default-hover-border-color: #666;
-    --highlight-background: #1d1f21;
-    --highlight-foreground: #c5c8c6;
-    --highlight-gutter-background: #2d2f31;
-    --highlight-gutter-foreground: #b4b7b5;
+    --highlight-background: #fff;
+    --highlight-foreground: #000;
+    --highlight-gutter-background: #e5e5e5;
+    --highlight-gutter-foreground: #191919;
   }
   img {
     opacity: 0.75;
@@ -391,24 +391,11 @@ td {
 }
 /*
 
-Atom One Dark by Daniel Gamage
+Atom One Dark With support for ReasonML by Gidi Morris, based off work by Daniel Gamage
+
 Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
 */
-
 .hljs {
   display: block;
   overflow-x: auto;
@@ -416,151 +403,151 @@ hue-6-2: #e6c07b
   color: #abb2bf;
   background: #282c34;
 }
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
+.hljs-keyword, .hljs-operator {
+  color: #F92672;
+}
+.hljs-pattern-match {
+  color: #F92672;
+}
+.hljs-pattern-match .hljs-constructor {
+  color: #61aeee;
+}
+.hljs-function {
+  color: #61aeee;
+}
+.hljs-function .hljs-params {
+  color: #A6E22E;
+}
+.hljs-function .hljs-params .hljs-typing {
+  color: #FD971F;
+}
+.hljs-module-access .hljs-module {
+  color: #7e57c2;
+}
+.hljs-constructor {
+  color: #e2b93d;
+}
+.hljs-constructor .hljs-string {
+  color: #9CCC65;
+}
+.hljs-comment, .hljs-quote {
+  color: #b18eb1;
   font-style: italic;
 }
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
+.hljs-doctag, .hljs-formula {
   color: #c678dd;
 }
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst {
   color: #e06c75;
 }
-
 .hljs-literal {
   color: #56b6c2;
 }
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string {
   color: #98c379;
 }
-
-.hljs-built_in,
-.hljs-class .hljs-title {
+.hljs-built_in, .hljs-class .hljs-title {
   color: #e6c07b;
 }
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number {
   color: #d19a66;
 }
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title {
   color: #61aeee;
 }
-
 .hljs-emphasis {
   font-style: italic;
 }
-
 .hljs-strong {
   font-weight: bold;
 }
-
 .hljs-link {
   text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {
-/* Tomorrow Night Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/*
 
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #969896;
-}
+Qt Creator light color scheme
 
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #cc6666;
-}
+*/
 
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #de935f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #f0c674;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #b5bd68;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #81a2be;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #b294bb;
-}
 
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #1d1f21;
-  color: #c5c8c6;
   padding: 0.5em;
+  background: #ffffff;
 }
 
+.hljs,
+.hljs-subst,
+.hljs-tag,
+.hljs-title {
+  color: #000000;
+}
+
+.hljs-strong,
 .hljs-emphasis {
+  color: #000000;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: #000080;
+}
+
+.hljs-code
+.hljs-selector-class {
+  color: #800080;
+}
+
+.hljs-emphasis,
+.hljs-stronge,
+.hljs-type {
   font-style: italic;
 }
 
-.hljs-strong {
-  font-weight: bold;
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-function,
+.hljs-section,
+.hljs-symbol,
+.hljs-name {
+  color: #808000;
+}
+
+.hljs-attribute {
+  color: #800000;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #0055AF;
+}
+
+.hljs-string,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition,
+.hljs-link {
+  color: #008000;
+}
+
+.hljs-comment,
+.hljs-meta,
+.hljs-deletion {
+  color: #008000;
 }
 
 }
@@ -598,7 +585,7 @@ pre {
 }
 pre,
 code {
-  font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: highlight-background-dark, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
   border-radius: 3px;
@@ -1797,6 +1784,7 @@ pre code {
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .post-toc .nav .nav-child {
   display: block;
@@ -2015,6 +2003,16 @@ pre code {
 }
 .use-motion .collection-header {
   visibility: hidden;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
 }
 .posts-collapse .post-content {
   margin-bottom: 35px;
@@ -2388,6 +2386,13 @@ pre code {
 .post-block:last-of-type .post-eof {
   display: none;
 }
+.post-copyright ul {
+  list-style: none;
+  padding: 0.5em 1em;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  margin: 1em 0 0;
+}
 .post-tags {
   margin-top: 40px;
   text-align: center;
@@ -2489,39 +2494,6 @@ pre code {
   to {
     transform: rotateZ(-30deg);
   }
-}
-.followme {
-  color: #bbb;
-  padding: 1em 1.5em;
-  text-align: center;
-  background: var(--card-bg-color);
-  border-left: 3px solid #ff2a2a;
-  margin: 1em 0 0;
-}
-.followme .social-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.followme .social-list .social-item {
-  margin: 0.5em 2em;
-}
-@media (max-width: 991px) {
-  .followme .social-list .social-item {
-    margin: 0.5em 0.75em;
-  }
-}
-.followme .social-list .social-link {
-  border: 0;
-  display: inline-block;
-  text-align: center;
-}
-.followme .social-list .social-link .icon {
-  font-size: 1.75em;
-}
-.followme .social-list .social-link .label {
-  display: block;
-  font-size: 14px;
 }
 .category-all-page .category-all-title {
   text-align: center;
