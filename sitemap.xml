@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2021/04/15/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2021-04-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2021-04-16</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://example.com/2021/04/15/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2021-04-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/04/15/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2021-04-15</lastmod>
     
   </url>
   
@@ -88,7 +88,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,28 +96,28 @@
   
   <url>
     <loc>http://example.com/tags/Spider/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/software/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Beauty/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/science/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -126,35 +126,35 @@
   
   <url>
     <loc>http://example.com/categories/Spider-Scrapy/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/The-use-of-software/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Install-software/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Beautify-the-environment/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/Surf-the-Internet-with-science/</loc>
-    <lastmod>2021-04-16</lastmod>
+    <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
