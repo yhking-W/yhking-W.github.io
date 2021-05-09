@@ -23,34 +23,34 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;yhking.tk&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:&quot;ture&quot;,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
-<meta name="description" content="Linux 科学上网，使用Qv2ray客户端">
+<meta name="description" content="前言 Linux 科学上网，使用Qv2ray客户端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Qv2ray">
-<meta property="og:url" content="https://yhking.tk/2021/04/15/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="Qv2ray的安装与使用">
+<meta property="og:url" content="https://yhking.tk/2021/04/27/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Yhking Person Site">
-<meta property="og:description" content="Linux 科学上网，使用Qv2ray客户端">
+<meta property="og:description" content="前言 Linux 科学上网，使用Qv2ray客户端">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_1.png">
 <meta property="og:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_2.png">
 <meta property="og:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_3.png">
 <meta property="og:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_4.png">
 <meta property="og:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_5.png">
-<meta property="article:published_time" content="2021-04-15T12:34:20.722Z">
-<meta property="article:modified_time" content="2021-04-18T03:23:35.677Z">
+<meta property="article:published_time" content="2021-04-27T10:32:18.000Z">
+<meta property="article:modified_time" content="2021-05-09T08:59:44.804Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="science">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_1.png">
 
 
-<link rel="canonical" href="https://yhking.tk/2021/04/15/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="https://yhking.tk/2021/04/27/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;yhking.tk&#x2F;2021&#x2F;04&#x2F;15&#x2F;Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;15&#x2F;Qv2ray的安装与配置&#x2F;&quot;,&quot;title&quot;:&quot;Qv2ray&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;yhking.tk&#x2F;2021&#x2F;04&#x2F;27&#x2F;Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;27&#x2F;Qv2ray的安装与配置&#x2F;&quot;,&quot;title&quot;:&quot;Qv2ray的安装与使用&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>Qv2ray | Yhking Person Site</title><script src="/js/config.js"></script>
+<title>Qv2ray的安装与使用 | Yhking Person Site</title><script src="/js/config.js"></script>
   
 
 
@@ -130,7 +130,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%E4%B8%8B%E8%BD%BDQv2ray%E9%87%8C%E9%9D%A2%E5%8C%85%E6%8B%AC-%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E5%92%8C%E6%A0%B8%E5%BF%83%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">天翼云盘下载Qv2ray里面包括 执行文件和核心文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8CQv2ray-refs-tags-v1-99-6-linux-AppImage"><span class="nav-number">1.1.</span> <span class="nav-text">执行Qv2ray-refs.tags.v1.99.6-linux.AppImage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E9%A6%96%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84-%E4%B8%80%E4%B8%AA%E4%B8%BAv2ray%E8%B7%AF%E5%BE%84%EF%BC%8C%E4%B8%80%E4%B8%AA%E4%B8%BAv2ray%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84"><span class="nav-number">1.2.</span> <span class="nav-text">点击首选项配置文件路径,一个为v2ray路径，一个为v2ray所在路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E9%98%85"><span class="nav-number">1.3.</span> <span class="nav-text">订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">开启代理</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%A9%E7%BF%BC%E4%BA%91%E7%9B%98%E4%B8%8B%E8%BD%BDQv2ray"><span class="nav-text">1. 天翼云盘下载Qv2ray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%A7%E8%A1%8CAppImage%E6%96%87%E4%BB%B6"><span class="nav-text">2. 执行AppImage文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-text">3. 配置文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%A2%E9%98%85"><span class="nav-text">4. 订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86"><span class="nav-text">5. 开启代理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +208,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yhking.tk/2021/04/15/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://yhking.tk/2021/04/27/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -221,7 +221,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Qv2ray
+          Qv2ray的安装与使用
         </h1>
 
         <div class="post-meta-container">
@@ -232,14 +232,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-04-15 20:34:20" itemprop="dateCreated datePublished" datetime="2021-04-15T20:34:20+08:00">2021-04-15</time>
+      <time title="创建时间：2021-04-27 18:32:18" itemprop="dateCreated datePublished" datetime="2021-04-27T18:32:18+08:00">2021-04-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-18 11:23:35" itemprop="dateModified" datetime="2021-04-18T11:23:35+08:00">2021-04-18</time>
+        <time title="修改时间：2021-05-09 16:59:44" itemprop="dateModified" datetime="2021-05-09T16:59:44+08:00">2021-05-09</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -259,7 +259,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>241</span>
+      <span>226</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -277,27 +277,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Linux 科学上网，使用Qv2ray客户端</p>
+        <hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>Linux 科学上网，使用Qv2ray客户端</p>
+</blockquote>
 <span id="more"></span>
 
-<h2 id="天翼云盘下载Qv2ray里面包括-执行文件和核心文件"><a href="#天翼云盘下载Qv2ray里面包括-执行文件和核心文件" class="headerlink" title="天翼云盘下载Qv2ray里面包括 执行文件和核心文件"></a>天翼云盘下载Qv2ray里面包括 执行文件和核心文件</h2><p>天翼云盘<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/6bMbqmMnYNfi">下载地址</a>（访问码：5aml）</p>
-<h3 id="执行Qv2ray-refs-tags-v1-99-6-linux-AppImage"><a href="#执行Qv2ray-refs-tags-v1-99-6-linux-AppImage" class="headerlink" title="执行Qv2ray-refs.tags.v1.99.6-linux.AppImage"></a>执行Qv2ray-refs.tags.v1.99.6-linux.AppImage</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod +x  Qv2ray-refs.tags.v1.99.6-linux.AppImage</span><br><span class="line">$ ./Qv2ray-refs.tags.v1.99.6-linux.AppImage</span><br></pre></td></tr></table></figure>
+<h3 id="1-天翼云盘下载Qv2ray"><a href="#1-天翼云盘下载Qv2ray" class="headerlink" title="1. 天翼云盘下载Qv2ray"></a>1. 天翼云盘下载Qv2ray</h3><p>里面包括 <code>执行文件</code>和<code>核心文件</code></p>
+<p>天翼云盘<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/6bMbqmMnYNfi">下载地址</a>（访问码：5aml）</p>
+<h3 id="2-执行AppImage文件"><a href="#2-执行AppImage文件" class="headerlink" title="2. 执行AppImage文件"></a>2. 执行AppImage文件</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod +x  Qv2ray-refs.tags.v1.99.6-linux.AppImage</span><br><span class="line">$ ./Qv2ray-refs.tags.v1.99.6-linux.AppImage</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="点击首选项配置文件路径-一个为v2ray路径，一个为v2ray所在路径"><a href="#点击首选项配置文件路径-一个为v2ray路径，一个为v2ray所在路径" class="headerlink" title="点击首选项配置文件路径,一个为v2ray路径，一个为v2ray所在路径"></a>点击首选项配置文件路径,一个为v2ray路径，一个为v2ray所在路径</h3><img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_1.png" alt="1" style="zoom: 67%;" />
+<h3 id="3-配置文件路径"><a href="#3-配置文件路径" class="headerlink" title="3. 配置文件路径"></a>3. 配置文件路径</h3><p>点击首选项, 第一个为v2ray路径，第二个为v2ray所在路径</p>
+<img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_1.png" alt="1" style="zoom: 67%;" />
 
 <img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_2.png" alt="2" style="zoom:67%;" />
 
 
 
-<h3 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h3><img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_3.png" alt="3" style="zoom:67%;" />
+<h3 id="4-订阅"><a href="#4-订阅" class="headerlink" title="4. 订阅"></a>4. 订阅</h3><img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_3.png" alt="3" style="zoom:67%;" />
 
 <img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_4.png" alt="4" style="zoom:67%;" />
 
 
 
-<h3 id="开启代理"><a href="#开启代理" class="headerlink" title="开启代理"></a>开启代理</h3><img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_5.png" alt="5" style="zoom:67%;" />
+<h3 id="5-开启代理"><a href="#5-开启代理" class="headerlink" title="5. 开启代理"></a>5. 开启代理</h3><img src="https://gitee.com/yhking/picture-in-markdown/raw/master/markdown%E6%89%80%E7%94%A8%E5%9B%BE%E7%89%87/Qv2ray_5.png" alt="5" style="zoom:67%;" />
 
 
 
@@ -340,7 +345,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://yhking.tk/2021/04/15/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="Qv2ray">https://yhking.tk/2021/04/15/Qv2ray的安装与配置/</a>
+      <a href="https://yhking.tk/2021/04/27/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="Qv2ray的安装与使用">https://yhking.tk/2021/04/27/Qv2ray的安装与配置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -356,13 +361,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/04/27/git%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="Git的使用">
-                  <i class="fa fa-chevron-left"></i> Git的使用
+                <a href="/2021/05/08/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E6%96%B0%E7%9F%A5/" rel="prev" title="C语言复习新知">
+                  <i class="fa fa-chevron-left"></i> C语言复习新知
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/04/15/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="Scrapy(一)">
-                  Scrapy(一) <i class="fa fa-chevron-right"></i>
+                <a href="/2021/04/27/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="Scrapy的基础使用">
+                  Scrapy的基础使用 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -427,5 +432,5 @@
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":270,"height":300},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":160,"height":280},"mobile":{"show":false},"log":false});</script></body>
 </html>

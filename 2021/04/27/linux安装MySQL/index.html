@@ -23,27 +23,27 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;yhking.tk&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:&quot;ture&quot;,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
-<meta name="description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。">
+<meta name="description" content="前言 MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux install MySQL">
-<meta property="og:url" content="https://yhking.tk/2021/04/12/linux%E5%AE%89%E8%A3%85MySQL/index.html">
+<meta property="og:title" content="Linux安装MySQL">
+<meta property="og:url" content="https://yhking.tk/2021/04/27/linux%E5%AE%89%E8%A3%85MySQL/index.html">
 <meta property="og:site_name" content="Yhking Person Site">
-<meta property="og:description" content="MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。">
+<meta property="og:description" content="前言 MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 Oracle 旗下产品。MySQL 是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL是最好的 RDBMS (Relational Database Management System，关系数据库管理系统) 应用软件之一。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-12T14:57:54.498Z">
-<meta property="article:modified_time" content="2021-04-18T03:04:40.621Z">
+<meta property="article:published_time" content="2021-04-27T10:32:18.000Z">
+<meta property="article:modified_time" content="2021-05-09T08:25:16.683Z">
 <meta property="article:author" content="yhking">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yhking.tk/2021/04/12/linux%E5%AE%89%E8%A3%85MySQL/">
+<link rel="canonical" href="https://yhking.tk/2021/04/27/linux%E5%AE%89%E8%A3%85MySQL/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;yhking.tk&#x2F;2021&#x2F;04&#x2F;12&#x2F;linux%E5%AE%89%E8%A3%85MySQL&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;12&#x2F;linux安装MySQL&#x2F;&quot;,&quot;title&quot;:&quot;Linux install MySQL&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;yhking.tk&#x2F;2021&#x2F;04&#x2F;27&#x2F;linux%E5%AE%89%E8%A3%85MySQL&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;04&#x2F;27&#x2F;linux安装MySQL&#x2F;&quot;,&quot;title&quot;:&quot;Linux安装MySQL&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>Linux install MySQL | Yhking Person Site</title><script src="/js/config.js"></script>
+<title>Linux安装MySQL | Yhking Person Site</title><script src="/js/config.js"></script>
   
 
 
@@ -123,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.</span> <span class="nav-text">1. 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD-MySQL"><span class="nav-number">2.</span> <span class="nav-text">2. 下载 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%A7%A3%E5%8E%8B"><span class="nav-number">3.</span> <span class="nav-text">3. 解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Install-MySQL"><span class="nav-number">4.</span> <span class="nav-text">4. Install MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Login-MySQL"><span class="nav-number">5.</span> <span class="nav-text">5. Login MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Other"><span class="nav-number">6.</span> <span class="nav-text">6. Other</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Change-the-password"><span class="nav-number">6.1.</span> <span class="nav-text">Change the password</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Modify-access-address"><span class="nav-number">6.2.</span> <span class="nav-text">Modify access address</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Restart-the-MySQL"><span class="nav-number">7.</span> <span class="nav-text">7. Restart the MySQL</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-text">1. 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD-MySQL"><span class="nav-text">2. 下载 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%A7%A3%E5%8E%8B"><span class="nav-text">3. 解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Install-MySQL"><span class="nav-text">4. Install MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Login-MySQL"><span class="nav-text">5. Login MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Other"><span class="nav-text">6. Other</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Change-the-password"><span class="nav-text">Change the password</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Modify-access-address"><span class="nav-text">Modify access address</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Restart-the-MySQL"><span class="nav-text">7. Restart the MySQL</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yhking.tk/2021/04/12/linux%E5%AE%89%E8%A3%85MySQL/">
+    <link itemprop="mainEntityOfPage" href="https://yhking.tk/2021/04/27/linux%E5%AE%89%E8%A3%85MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux install MySQL
+          Linux安装MySQL
         </h1>
 
         <div class="post-meta-container">
@@ -225,14 +225,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-04-12 22:57:54" itemprop="dateCreated datePublished" datetime="2021-04-12T22:57:54+08:00">2021-04-12</time>
+      <time title="创建时间：2021-04-27 18:32:18" itemprop="dateCreated datePublished" datetime="2021-04-27T18:32:18+08:00">2021-04-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-18 11:04:40" itemprop="dateModified" datetime="2021-04-18T11:04:40+08:00">2021-04-18</time>
+        <time title="修改时间：2021-05-09 16:25:16" itemprop="dateModified" datetime="2021-05-09T16:25:16+08:00">2021-05-09</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>934</span>
+      <span>936</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -270,7 +270,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>MySQL是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>，由瑞典MySQL AB 公司开发，属于 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle">Oracle</a> 旗下产品。MySQL 是最流行的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>之一，在 WEB 应用方面，MySQL是最好的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RDBMS/1048260">RDBMS</a> (Relational Database Management System，关系数据库管理系统) 应用软件之一。</p>
+        <hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>MySQL是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>，由瑞典MySQL AB 公司开发，属于 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle">Oracle</a> 旗下产品。MySQL 是最流行的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>之一，在 WEB 应用方面，MySQL是最好的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RDBMS/1048260">RDBMS</a> (Relational Database Management System，关系数据库管理系统) 应用软件之一。</p>
+</blockquote>
 <span id="more"></span>
 
 <p>MySQL所使用的 SQL 语言是用于访问<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
@@ -327,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://yhking.tk/2021/04/12/linux%E5%AE%89%E8%A3%85MySQL/" title="Linux install MySQL">https://yhking.tk/2021/04/12/linux安装MySQL/</a>
+      <a href="https://yhking.tk/2021/04/27/linux%E5%AE%89%E8%A3%85MySQL/" title="Linux安装MySQL">https://yhking.tk/2021/04/27/linux安装MySQL/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -340,13 +343,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/04/13/zsh%E7%BE%8E%E5%8C%96/" rel="prev" title="Beautify the ZSH">
-                  <i class="fa fa-chevron-left"></i> Beautify the ZSH
+                <a href="/2021/04/27/git%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="Git的使用">
+                  <i class="fa fa-chevron-left"></i> Git的使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/04/12/linux%E5%AE%89%E8%A3%85pip/" rel="next" title="Linux install pip">
-                  Linux install pip <i class="fa fa-chevron-right"></i>
+                <a href="/2021/04/27/linux%E5%AE%89%E8%A3%85pip/" rel="next" title="Linux安装pip">
+                  Linux安装pip <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -411,5 +414,5 @@
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":270,"height":300},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":160,"height":280},"mobile":{"show":false},"log":false});</script></body>
 </html>
