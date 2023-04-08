@@ -6,27 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.yhking.xyz">
-  <title>初探JVM | Hexo</title>
+  <title>一些基础问题 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="前言 初次学习JVM，未完。。。">
+  <meta name="description" content="前言 一些基础问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初探JVM">
-<meta property="og:url" content="https://www.yhking.xyz/2023/04/08/JVM/index.html">
+<meta property="og:title" content="一些基础问题">
+<meta property="og:url" content="https://www.yhking.xyz/2023/04/08/java%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言 初次学习JVM，未完。。。">
+<meta property="og:description" content="前言 一些基础问题">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.yhking.xyz/images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png">
-<meta property="og:image" content="https://www.yhking.xyz/images/%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png">
-<meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png">
-<meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png">
-<meta property="article:published_time" content="2023-04-08T14:19:37.217Z">
-<meta property="article:modified_time" content="2023-04-08T14:22:05.574Z">
+<meta property="article:published_time" content="2023-04-08T15:04:03.967Z">
+<meta property="article:modified_time" content="2023-04-08T15:05:02.569Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.yhking.xyz/images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -221,14 +216,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JVM" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java中的基础面试题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      初探JVM
+      一些基础问题
     </h1>
   
 
@@ -240,8 +235,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2023/04/08/JVM/" class="archive-article-date">
-        <time datetime="2023-04-08T14:19:37.217Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
+<a href="/2023/04/08/java%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
+        <time datetime="2023-04-08T15:04:03.967Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
 </a>
 
   
@@ -251,51 +246,70 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>初次学习JVM，未完。。。</p>
+<p>一些基础问题</p>
 </blockquote>
 <span id="more"></span>
 
-
-<h1 id="1-JVM结构"><a href="#1-JVM结构" class="headerlink" title="1.JVM结构"></a>1.JVM结构</h1><p>结构简图：</p>
-<p><img src="/../images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png" alt="JVM结构简图"></p>
-<h3 id="native"><a href="#native" class="headerlink" title="native"></a>native</h3><ul>
-<li>凡是带了<strong>native关键字</strong>的，说明Java的作用范围达不到了，会去调用<strong>底层C语言</strong>的库！</li>
-<li>调用本地方法栈时</li>
-<li>会调用本地方法接口 JNI（Java Native Interface）</li>
-<li>JNI作用：扩展Java的使用，融合不同的编程语言为Java所用！  最初想要融合：C、C++</li>
-<li>Java诞生的时候C、C++ 横行，想要立足，必须要有掉用C、C++ 的程序~</li>
-<li>它在内存区域专门开辟了一块区域（本地方法栈：Native Method Stack），<strong>登记Native方法</strong></li>
-<li>在最终执行的时候，加载本地方法库的方法通过JNI（本地方法接口）</li>
-<li>正常情况下不用Native，在操作驱动打印机、操作系统时才会用到</li>
+<h2 id="1-ArrayList和数组的区别"><a href="#1-ArrayList和数组的区别" class="headerlink" title="1. ArrayList和数组的区别"></a>1. <strong>ArrayList</strong>和<strong>数组</strong>的区别</h2><ul>
+<li><strong>创建</strong>：数组创建是需要固定大小；ArrayList创建不需要指定大小默认数组长度为10，它会在加入和删除时自动调整大小。调整形式为：新创建一个原来长度1.5倍的数组，将原来的数据copy到新数组中，再将要加入数组的元素加入进去。</li>
+<li><strong>使用</strong>：数组需要指定索引，还会有索引越界的情况；arraylist直接add就行</li>
 </ul>
-<h3 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h3><p>（程序计数器）</p>
-<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>Method Area 方法区</p>
-<p>​	方法区是被所有线程共享的，所有字段和方法字节码，以及一些特殊方法，如构造方法，接口代码也在此定义，简单说，所有定义的方法的信息都保存在该区域，<strong>此区域所欲共享区间。</strong></p>
-<p>静态变量、常量、类信息（构造方法、接口定义）、运行时的常量池存在方法区中，但是实例变量存在堆内存中，和方法区无关。</p>
-<h3 id="一个类的创建过程"><a href="#一个类的创建过程" class="headerlink" title="一个类的创建过程"></a>一个类的创建过程</h3><p><img src="/../images/%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png" alt="一个对象的创建过程"></p>
-<h3 id="新生区"><a href="#新生区" class="headerlink" title="新生区"></a>新生区</h3><h3 id="老年区"><a href="#老年区" class="headerlink" title="老年区"></a>老年区</h3><h3 id="永久区"><a href="#永久区" class="headerlink" title="永久区"></a>永久区</h3><h1 id="2-什么是双亲委派模型"><a href="#2-什么是双亲委派模型" class="headerlink" title="2. 什么是双亲委派模型"></a>2. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vipstone/p/17087949.html">什么是双亲委派模型</a></h1><p>双亲委派模型是 Java 类加载器的一种工作模式，通过这种工作模式，Java 虚拟机将类文件加载到内存中，这样就保证了 Java 程序能够正常的运行起来。</p>
-<h2 id="1-类加载器"><a href="#1-类加载器" class="headerlink" title="1.类加载器"></a>1.类加载器</h2><p>双亲委派模型针对的是 Java 虚拟机中三个类加载器的，这三个类加载器分别是：</p>
-<ol>
-<li>启动类加载器（Bootstrap ClassLoader）</li>
-<li>扩展类加载器（Extension ClassLoader）</li>
-<li>应用程序类加载器（Application ClassLoader）</li>
-</ol>
-<p><img src="/../images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png" alt="双亲委派"></p>
-<h4 id="1-1-启动类加载器"><a href="#1-1-启动类加载器" class="headerlink" title="1.1 启动类加载器"></a>1.1 启动类加载器</h4><p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，它是用来加载 <JAVA_HOME>\jre\lib\rt.jar 和 resources.jar 等 jar 包的。</p>
-<p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，而这个 C++ 实现的类加载器在 Java 中是没有与之对应的类的。</p>
-<h4 id="1-2-扩展类加载器"><a href="#1-2-扩展类加载器" class="headerlink" title="1.2 扩展类加载器"></a>1.2 扩展类加载器</h4><p>扩展类加载器是用来加载 <JAVA_HOME>\jre\lib\ext 目录下 jar 包的。</p>
-<h4 id="1-3-应用程序类加载器"><a href="#1-3-应用程序类加载器" class="headerlink" title="1.3 应用程序类加载器"></a>1.3 应用程序类加载器</h4><p>应用程序类加载器是用来加载 classpath 也就是用户的所有类的。</p>
-<h2 id="2-双亲委派模型"><a href="#2-双亲委派模型" class="headerlink" title="2.双亲委派模型"></a>2.双亲委派模型</h2><p>双亲委派模型的执行流程是这样的：<br>1、当加载一个类时，会先从<strong>应用程序类加载器</strong>的<strong>缓存</strong>里查找相应的类，如果能找到就返回对象，如果找不到就执行下面流程；</p>
-<p>2、在<strong>扩展加载器<em>缓存</em></strong>中查找相应的类，如果能找到就返回对象，如果找不到就继续下面流程；</p>
-<p>3、在<strong>启动类加载器</strong>中查询相应的类，如果找到就返回对象，如果找不到就继续下面流程；</p>
-<p>4、在<strong>扩展加载器</strong>中查找并加载类，如果能找到就返回对象，并将对象加入到缓存中，如果找不到就继续下面流程；</p>
-<p>5、在<strong>应用程序类加载器</strong>中查找并加载类，如果能找到就返回对象，并将对象加入到缓存中，如果找不到就返回 ClassNotFound 异常。</p>
-<p><img src="/../images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png" alt="双亲委派加载顺序"></p>
-<blockquote>
-<p>一般“双亲”指的是“父亲”和“母亲”，而在这里“双亲”指的是类加载类先向上找，再向下找的流程就叫做双亲委派模型。</p>
+<h2 id="2-string、stringbuffer、stringbuilder区别"><a href="#2-string、stringbuffer、stringbuilder区别" class="headerlink" title="2. string、stringbuffer、stringbuilder区别"></a>2. <strong>string、stringbuffer、stringbuilder</strong>区别</h2><ul>
+<li><strong>可变性</strong>：string是由final修饰的，是一个不可变得类，每当修改string中的值时会创建一个新的对象；而后两者是一个可变类，字符串的变更是不会产生新的对象。</li>
+<li><strong>线程安全</strong>：string是个不可变得类，因此是线程安全的；stringbuffer也是线程安全的，因为它的每个操作方法里面都用了synchronized一个同步关键字；stringbulder是线程不安全的，多线程环境下对字符串进行操作的时候，应该使用stringbuffer，单线程建议使用stringbuilder；</li>
+<li><strong>性能</strong>：string性能最低，由于不可变每当字符串发生改变需要创建新的对象和分配内存；stringbuffer由于加了同步锁相对于stringbuilder性能较差，但是比string好</li>
+<li><strong>存储方面</strong>：string存储在字符串常量池里面；stringbuffer、stringbuilder存储在堆内存空间</li>
+</ul>
+<h2 id="3-Java8的新特性"><a href="#3-Java8的新特性" class="headerlink" title="3. Java8的新特性"></a>3. Java8的新特性</h2><ul>
+<li>最主要的 Lambda表达式</li>
+</ul>
+<h2 id="4-反射机制的优缺点"><a href="#4-反射机制的优缺点" class="headerlink" title="4. 反射机制的优缺点"></a>4. 反射机制的优缺点</h2><ul>
+<li>优点：程序运行时可以动态的获取类的所有信息，属性方法等。提高了程序的灵活性，降低耦合，提高自适应能力。</li>
+<li>缺点：<ul>
+<li>性能问题：由于是在程序运行时操作类的内部成员，会拖慢程序的运行，一定程度上影响效率。</li>
+<li>安全问题：由于直接可以得到类内部的一切属性，存在安全问题</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-泛型擦除"><a href="#5-泛型擦除" class="headerlink" title="5. 泛型擦除"></a>5. 泛型擦除</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; integers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">List&lt;String&gt; str = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">println(integers.getClass() = str.getClass())	<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>编译阶段，编译器会进行类型检测，错误的类型就会编译失败。一旦通过编译，编译器就会将泛型擦除。运行阶段时对于jvm来说就没有泛型类型对象，就是两个List普通类的原始类型对象。目的是为了向下兼容。如1.5版本没有泛型概念等</p>
+<h2 id="6-重写equals方法为什么要重写hashCode方法"><a href="#6-重写equals方法为什么要重写hashCode方法" class="headerlink" title="6. 重写equals方法为什么要重写hashCode方法"></a>6. 重写equals方法为什么要重写hashCode方法</h2><p>Java里面任何一个对象都有一个native的hashCode方法，如果只重写equals()方法，不重写hashCode()方法。就可能导致a.equals(b)结果为true，但hashCode却不同。这个只重写了equals()方法的对象在使用散列集合进行存储的时候会出现问题，散列集合进行存储的时候是使用hashCode来计算key的存储位置，如果存储两个相同的对象，但它们的hashCode却不相同，就会导致这两个对象存储在hash表的不同位置，在使用时会出现歧义。</p>
+<p>一篇较好的博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/vipstone/p/15636401.html">https://www.cnblogs.com/vipstone/p/15636401.html</a></p>
+<h2 id="7-ApplicationContext和BeanFactory的区别"><a href="#7-ApplicationContext和BeanFactory的区别" class="headerlink" title="7. ApplicationContext和BeanFactory的区别"></a>7. ApplicationContext和BeanFactory的区别</h2><p><strong>BeanFactory容器</strong>：BeanFactory是Spring中⾮常核⼼的组件，表示Bean⼯⼚，可以⽣成Bean，维护Bean</p>
+<ul>
+<li>当容器被创建的时候，不自动创建容器中的Bean，只有当真正使用该Bean时才会创建Bean</li>
+<li>优点：节省系统资源，缺点：相对来说，系统响应速度慢，并且方法还过时了</li>
+</ul>
+<p><strong>ApplicationContext容器：</strong></p>
+<p>ApplicationContext间接的继承了BeanFactory，所以ApplicationContext拥有BeanFactory所有的特点，也<br>是⼀个Bean⼯⼚，但是ApplicationContext除开继承了BeanFactory之外，还继承了诸如<br>EnvironmentCapable、MessageSource、ApplicationEventPublisher等接⼝，从⽽<br>ApplicationContext还有获取系统环境变量、国际化、事件发布等功能，这是BeanFactory所不具备的。</p>
+<ul>
+<li>当容器对象被创建的时候，会自动将容器中所有的Bean创建好，</li>
+<li>优点：系统的响应速度快，缺点：浪费系统资源</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ApplicationContext</span> <span class="variable">ac</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(“applicationContext.xml”);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-Spring的事务"><a href="#8-Spring的事务" class="headerlink" title="8.Spring的事务"></a>8.Spring的事务</h2><p>spring支持两种事务方式，<strong>编程式事务</strong>和<strong>声明式事务</strong>。</p>
+<p>后者最常见，通常情况下只需要一个 **@Transactional **就搞定了。</p>
+<p>编程式事务是指将事务管理代码嵌入嵌入到业务代码中，来控制事务的提交和回滚。</p>
+<h2 id="9-乐观锁"><a href="#9-乐观锁" class="headerlink" title="9.乐观锁"></a>9.乐观锁</h2><blockquote>
+<p>乐观锁 ：乐观，它总是认为不会出现问题，无论干什么都不去上锁！如果问题出现了，再次更新值测试。</p>
+<p>悲观锁：悲观，它总是认为会出现问题，无论干什么都去上锁！再去操作。</p>
 </blockquote>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>双亲委派模型是和 Java 中多个类加载器（启动类加载器、扩展加载器、应用程序类加载器）的运行规则，通过这个（双亲委派模型）规则可以避免类的非安全问题和类被重复加载的问题，但它也遇到了一些问题，比如 JNDI 和 JDBC 不能通过这个规则进行加载，它需要通过打破双亲委派的模型的方式来加载。</p>
-<p>未完待续。。。</p>
+<h2 id="10-JVM"><a href="#10-JVM" class="headerlink" title="10.JVM"></a>10.JVM</h2><p>《Java虚拟机规范》中将 JVM 运行时数据区域划分为以下 5 部分：</p>
+<ul>
+<li>程序计数器（Program Counter Register）</li>
+<li>Java 虚拟机栈（Java Virtual Machine Stacks）</li>
+<li>本地方法栈（Native Method Stack）</li>
+<li>Java 堆（Java Heap）</li>
+<li>方法区（Methed Area）</li>
+</ul>
+<blockquote>
+<p>程序计数器、Java虚拟机栈、本地方法栈都是**$\textcolor{green}{线程独占}$**的</p>
+<p>Java堆和方法区是&#x3D;&#x3D;共享内存&#x3D;&#x3D;(线程)</p>
+</blockquote>
 
     
 
@@ -342,7 +356,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://www.yhking.xyz/2023/04/08/JVM/" title="初探JVM" target="_blank">https://www.yhking.xyz/2023/04/08/JVM/</a>
+          <a href="https://www.yhking.xyz/2023/04/08/java中的基础面试题/" title="一些基础问题" target="_blank">https://www.yhking.xyz/2023/04/08/java中的基础面试题/</a>
         </li>
         
         <li>
@@ -420,7 +434,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://www.yhking.xyz/2023/04/08/JVM/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://www.yhking.xyz/2023/04/08/java%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -435,18 +449,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/04/08/java%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一些基础问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">spring突击3-SQL</div>
+    <a href="/2023/04/08/JVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初探JVM</div>
       <i class="icon-circle-right"></i>
     </a>
   
