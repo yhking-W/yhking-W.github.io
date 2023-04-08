@@ -18,7 +18,7 @@
 <meta property="og:description" content="前言 Git（读音为&#x2F;gɪt&#x2F;）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-08T02:35:55.967Z">
-<meta property="article:modified_time" content="2023-04-08T11:38:07.050Z">
+<meta property="article:modified_time" content="2023-04-08T13:38:27.209Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="others">
 <meta property="article:tag" content="tools">
@@ -252,29 +252,61 @@
 </blockquote>
 <span id="more"></span>
 
-<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt install git</span><br></pre></td></tr></table></figure>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><ul>
+<li>linux下安装  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt install git</span><br></pre></td></tr></table></figure></li>
+<li>windows直接下载安装即可！</li>
+</ul>
+<h3 id="2-给git新建一个文件夹"><a href="#2-给git新建一个文件夹" class="headerlink" title="2. 给git新建一个文件夹"></a>2. 给git新建一个文件夹</h3><h3 id="3-初始化本地文件夹"><a href="#3-初始化本地文件夹" class="headerlink" title="3. 初始化本地文件夹"></a>3. 初始化本地文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&#x27;new folder&#x27;</span></span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-给git新建一个文件夹"><a href="#2-给git新建一个文件夹" class="headerlink" title="2. 给git新建一个文件夹"></a>2. 给git新建一个文件夹</h3><h3 id="3-初始化本地文件夹"><a href="#3-初始化本地文件夹" class="headerlink" title="3. 初始化本地文件夹"></a>3. 初始化本地文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="string">&#x27;new folder&#x27;</span></span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-添加远程仓库-并pull到本地"><a href="#4-添加远程仓库-并pull到本地" class="headerlink" title="4. 添加远程仓库, 并pull到本地"></a>4. 添加远程仓库, 并pull到本地</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add a remote repository, from the remote repository to pull the repository files to the local</span></span><br><span class="line">$ git remote add origin https://gitee.com/username/reponame </span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+<h3 id="4-添加远程仓库-并pull到本地"><a href="#4-添加远程仓库-并pull到本地" class="headerlink" title="4. 添加远程仓库, 并pull到本地"></a>4. 添加远程仓库, 并pull到本地</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add a remote repository, from the remote repository to pull the repository files to the local</span></span><br><span class="line">git remote add origin https://gitee.com/username/reponame </span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-把文件放到git文件夹"><a href="#5-把文件放到git文件夹" class="headerlink" title="5. 把文件放到git文件夹"></a>5. 把文件放到git文件夹</h3><p><code>Place the files to be uploaded under the new folder</code></p>
-<h3 id="6-保存到缓冲区"><a href="#6-保存到缓冲区" class="headerlink" title="6. 保存到缓冲区"></a>6. 保存到缓冲区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add .(|git add filename)</span><br></pre></td></tr></table></figure>
+<h3 id="6-保存到缓冲区"><a href="#6-保存到缓冲区" class="headerlink" title="6. 保存到缓冲区"></a>6. 保存到缓冲区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .(|git add filename)</span><br></pre></td></tr></table></figure>
 
-<h3 id="7-添加信息"><a href="#7-添加信息" class="headerlink" title="7. 添加信息"></a>7. 添加信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tell the repository your email address and user name</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">$ git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-添加信息"><a href="#7-添加信息" class="headerlink" title="7. 添加信息"></a>7. 添加信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tell the repository your email address and user name</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="8-添加描述"><a href="#8-添加描述" class="headerlink" title="8. 添加描述"></a>8. 添加描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add submission file description</span></span><br><span class="line">$ git commit -m <span class="string">&#x27;your description&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="8-添加描述"><a href="#8-添加描述" class="headerlink" title="8. 添加描述"></a>8. 添加描述</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add submission file description</span></span><br><span class="line">git commit -m <span class="string">&#x27;your description&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="9-Push本地文件到远程仓库"><a href="#9-Push本地文件到远程仓库" class="headerlink" title="9. Push本地文件到远程仓库"></a>9. Push本地文件到远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Push the local repository to the remote repository</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="9-Push本地文件到远程仓库"><a href="#9-Push本地文件到远程仓库" class="headerlink" title="9. Push本地文件到远程仓库"></a>9. Push本地文件到远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Push the local repository to the remote repository</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
 <hr>
 <p><em><strong>note：If  ‘Could not resolve host’ appears, It could be a system agent, you need to cancel it.</strong></em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">unset</span> http_proxy</span><br><span class="line">$ http_proxy=<span class="string">&quot;&quot;</span></span><br><span class="line">$ <span class="built_in">unset</span> https_proxy</span><br><span class="line">$ https_proxy=<span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line"></span><br><span class="line"><span class="built_in">unset</span> http_proxy</span><br><span class="line">http_proxy=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="built_in">unset</span> https_proxy</span><br><span class="line">https_proxy=<span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h1 id="日常操作所用命令"><a href="#日常操作所用命令" class="headerlink" title="日常操作所用命令"></a>日常操作所用命令</h1><ul>
+<li><p><strong>克隆仓库</strong>：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;git地址&gt;</span><br></pre></td></tr></table></figure>
+<p>初始化仓库：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加文件到暂存区</strong>：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br></pre></td></tr></table></figure>
+<p>把暂存区的文件提交到仓库：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;提交信息&quot;</span><br></pre></td></tr></table></figure>
+<p>查看提交的历史记录：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --stat</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>工作区回滚</strong>：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<p>撤销最后一次提交：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^<span class="number">1</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>以当前分支为基础新建分支</strong>：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;branchname&gt;</span><br></pre></td></tr></table></figure>
+<p>列举所有的分支：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>单纯地切换到某个分支：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branchname&gt;</span><br></pre></td></tr></table></figure>
+<p>删掉特定的分支：</p>
+   <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D &lt;branchname&gt;</span><br></pre></td></tr></table></figure>
+<p>合并分支：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branchname&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>推送当前分支最新的提交到远程</strong>：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
 
-
+<p>拉取远程分支最新的提交到本地：</p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     
 
@@ -599,11 +631,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +643,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">

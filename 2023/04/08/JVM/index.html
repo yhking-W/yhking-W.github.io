@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.yhking.xyz">
-  <title>Hexo</title>
+  <title>初探JVM | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://www.yhking.xyz/index.html">
+  <meta name="description" content="前言 初次学习JVM，未完。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探JVM">
+<meta property="og:url" content="https://www.yhking.xyz/2023/04/08/JVM/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 初次学习JVM，未完。。。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.yhking.xyz/images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png">
+<meta property="article:published_time" content="2023-04-08T14:19:37.217Z">
+<meta property="article:modified_time" content="2023-04-08T14:22:05.574Z">
 <meta property="article:author" content="yhking">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yhking.xyz/images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -215,25 +221,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-JVM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JVM" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/JVM/">初探JVM</a>
-	
+    <h1 class="article-title" itemprop="name">
+      初探JVM
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2023/04/08/JVM/" class="archive-article-date">
         <time datetime="2023-04-08T14:19:37.217Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
 </a>
@@ -247,285 +253,106 @@
     <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
 <p>初次学习JVM，未完。。。</p>
 </blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/JVM/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/JVM/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<span id="more"></span>
 
 
-
-
-  
-    <article id="post-突击3-SQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/">spring突击3-SQL</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.277Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>MySQL去重和事务隔离级别</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-突击2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB2/">spring突击2</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB2/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>IoC和DI的区别</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-突击1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB1/">spring突击1</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB1/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>包含几个常见问题：</p>
+<h1 id="1-JVM结构"><a href="#1-JVM结构" class="headerlink" title="1.JVM结构"></a>1.JVM结构</h1><p>结构简图：</p>
+<p><img src="/../images/JVM%E7%BB%93%E6%9E%84%E7%AE%80%E5%9B%BE.png" alt="JVM结构简图"></p>
+<h3 id="native"><a href="#native" class="headerlink" title="native"></a>native</h3><ul>
+<li>凡是带了<strong>native关键字</strong>的，说明Java的作用范围达不到了，会去调用<strong>底层C语言</strong>的库！</li>
+<li>调用本地方法栈时</li>
+<li>会调用本地方法接口 JNI（Java Native Interface）</li>
+<li>JNI作用：扩展Java的使用，融合不同的编程语言为Java所用！  最初想要融合：C、C++</li>
+<li>Java诞生的时候C、C++ 横行，想要立足，必须要有掉用C、C++ 的程序~</li>
+<li>它在内存区域专门开辟了一块区域（本地方法栈：Native Method Stack），<strong>登记Native方法</strong></li>
+<li>在最终执行的时候，加载本地方法库的方法通过JNI（本地方法接口）</li>
+<li>正常情况下不用Native，在操作驱动打印机、操作系统时才会用到</li>
+</ul>
+<h3 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h3><p>（程序计数器）</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>Method Area 方法区</p>
+<p>​	方法区是被所有线程共享的，所有字段和方法字节码，以及一些特殊方法，如构造方法，接口代码也在此定义，简单说，所有定义的方法的信息都保存在该区域，<strong>此区域所欲共享区间。</strong></p>
+<p>静态变量、常量、类信息（构造方法、接口定义）、运行时的常量池存在方法区中，但是实例变量存在堆内存中，和方法区无关。</p>
+<h3 id="一个类的创建过程"><a href="#一个类的创建过程" class="headerlink" title="一个类的创建过程"></a>一个类的创建过程</h3><p><img src="/../images/%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png" alt="一个对象的创建过程"></p>
+<h3 id="新生区"><a href="#新生区" class="headerlink" title="新生区"></a>新生区</h3><h3 id="老年区"><a href="#老年区" class="headerlink" title="老年区"></a>老年区</h3><h3 id="永久区"><a href="#永久区" class="headerlink" title="永久区"></a>永久区</h3><h1 id="2-什么是双亲委派模型"><a href="#2-什么是双亲委派模型" class="headerlink" title="2. 什么是双亲委派模型"></a>2. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vipstone/p/17087949.html">什么是双亲委派模型</a></h1><p>双亲委派模型是 Java 类加载器的一种工作模式，通过这种工作模式，Java 虚拟机将类文件加载到内存中，这样就保证了 Java 程序能够正常的运行起来。</p>
+<h2 id="1-类加载器"><a href="#1-类加载器" class="headerlink" title="1.类加载器"></a>1.类加载器</h2><p>双亲委派模型针对的是 Java 虚拟机中三个类加载器的，这三个类加载器分别是：</p>
 <ol>
-<li>new一个字符串创建几个对象</li>
-<li>过滤器和拦截器的区别</li>
-<li>${}和#{}的区别</li>
-<li>spring有几种注入方式</li>
-<li>@Autowired和@Resource有什么区别</li>
-<li>springbean的作用域</li>
-<li>springbean的生命周期</li>
-<li>跨域问题</li>
-<li>springboot中的事务</li>
+<li>启动类加载器（Bootstrap ClassLoader）</li>
+<li>扩展类加载器（Extension ClassLoader）</li>
+<li>应用程序类加载器（Application ClassLoader）</li>
 </ol>
+<p><img src="/../images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png" alt="双亲委派"></p>
+<h4 id="1-1-启动类加载器"><a href="#1-1-启动类加载器" class="headerlink" title="1.1 启动类加载器"></a>1.1 启动类加载器</h4><p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，它是用来加载 <JAVA_HOME>\jre\lib\rt.jar 和 resources.jar 等 jar 包的。</p>
+<p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，而这个 C++ 实现的类加载器在 Java 中是没有与之对应的类的。</p>
+<h4 id="1-2-扩展类加载器"><a href="#1-2-扩展类加载器" class="headerlink" title="1.2 扩展类加载器"></a>1.2 扩展类加载器</h4><p>扩展类加载器是用来加载 <JAVA_HOME>\jre\lib\ext 目录下 jar 包的。</p>
+<h4 id="1-3-应用程序类加载器"><a href="#1-3-应用程序类加载器" class="headerlink" title="1.3 应用程序类加载器"></a>1.3 应用程序类加载器</h4><p>应用程序类加载器是用来加载 classpath 也就是用户的所有类的。</p>
+<h2 id="2-双亲委派模型"><a href="#2-双亲委派模型" class="headerlink" title="2.双亲委派模型"></a>2.双亲委派模型</h2><p>双亲委派模型的执行流程是这样的：<br>1、当加载一个类时，会先从<strong>应用程序类加载器</strong>的<strong>缓存</strong>里查找相应的类，如果能找到就返回对象，如果找不到就执行下面流程；</p>
+<p>2、在<strong>扩展加载器<em>缓存</em></strong>中查找相应的类，如果能找到就返回对象，如果找不到就继续下面流程；</p>
+<p>3、在<strong>启动类加载器</strong>中查询相应的类，如果找到就返回对象，如果找不到就继续下面流程；</p>
+<p>4、在<strong>扩展加载器</strong>中查找并加载类，如果能找到就返回对象，并将对象加入到缓存中，如果找不到就继续下面流程；</p>
+<p>5、在<strong>应用程序类加载器</strong>中查找并加载类，如果能找到就返回对象，并将对象加入到缓存中，如果找不到就返回 ClassNotFound 异常。</p>
+<p><img src="/../images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png" alt="双亲委派加载顺序"></p>
+<blockquote>
+<p>一般“双亲”指的是“父亲”和“母亲”，而在这里“双亲”指的是类加载类先向上找，再向下找的流程就叫做双亲委派模型。</p>
 </blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB1/#more">more >></a>
-    
-    
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>双亲委派模型是和 Java 中多个类加载器（启动类加载器、扩展加载器、应用程序类加载器）的运行规则，通过这个（双亲委派模型）规则可以避免类的非安全问题和类被重复加载的问题，但它也遇到了一些问题，比如 JNDI 和 JDBC 不能通过这个规则进行加载，它需要通过打破双亲委派的模型的方式来加载。</p>
+<p>未完待续。。。</p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.png">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          yhking
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://www.yhking.xyz/2023/04/08/JVM/" title="初探JVM" target="_blank">https://www.yhking.xyz/2023/04/08/JVM/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -546,16 +373,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB1/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://www.yhking.xyz/2023/04/08/JVM/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring突击3-SQL</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -576,551 +463,14 @@
 
 
 
-  
-    <article id="post-Java集合、SQL增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">java集合与sql CRUD</a>
-	
-    </h1>
-  
 
 
-  
-  
-<a href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.267Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
 
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>java集合与sql CRUD</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/#more">more >></a>
-    
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常用设计模式、六大原则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/">常见设计模式和六大原则</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/" class="archive-article-date">
-        <time datetime="2023-04-08T13:00:21.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>六大原则：开闭原则、单一职责原则、里式替换原则、迪米特法则、接口隔离原则、依赖倒置原则DIP</p>
-<p>常见设计模式：工厂模式、单例模式、原型模式、外观模式、代理模式等</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-生活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%94%9F%E6%B4%BB/">生活</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%94%9F%E6%B4%BB/" class="archive-article-date">
-        <time datetime="2023-04-08T11:22:12.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>生活不如意，十有八九</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%94%9F%E6%B4%BB/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">essay</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%94%9F%E6%B4%BB/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-springbean的调用链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">Spring bean 的调用链</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/" class="archive-article-date">
-        <time datetime="2023-04-08T10:03:35.097Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>spring 的一些执行过程，如ioc的加载过程，bean的生命周期，aop执行的时机。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Scrapy的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">Scrapy的基础使用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Scrapy是适用于Python的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/9815698">自动化测试</a>。Scrapy吸引人的地方在于它是一个框架，任何人都可以根据需求方便的修改。它也提供了多种类型爬虫的基类，如BaseSpider、sitemap爬虫等，最新版本又提供了web2.0爬虫的支持。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">frame</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-zsh美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">终端美化</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Zsh（Z-shell）是一款用于交互式使用的shell，也可以作为脚本解释器来使用。其包含了 bash，ksh，tcsh 等其他shell中许多优秀功能，也拥有诸多自身特色。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beauty</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1160,8 +510,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,21 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.yhking.xyz">
-  <title>Hexo</title>
+  <title>常见设计模式和六大原则 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://www.yhking.xyz/index.html">
+  <meta name="description" content="前言 六大原则：开闭原则、单一职责原则、里式替换原则、迪米特法则、接口隔离原则、依赖倒置原则DIP 常见设计模式：工厂模式、单例模式、原型模式、外观模式、代理模式等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见设计模式和六大原则">
+<meta property="og:url" content="https://www.yhking.xyz/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 六大原则：开闭原则、单一职责原则、里式替换原则、迪米特法则、接口隔离原则、依赖倒置原则DIP 常见设计模式：工厂模式、单例模式、原型模式、外观模式、代理模式等">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.yhking.xyz/images/Design_pattern.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E5%8E%9F%E7%90%86.png">
+<meta property="article:published_time" content="2023-04-08T13:00:21.305Z">
+<meta property="article:modified_time" content="2023-04-08T13:23:58.049Z">
 <meta property="article:author" content="yhking">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yhking.xyz/images/Design_pattern.png">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -215,471 +222,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-JVM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-常用设计模式、六大原则" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/JVM/">初探JVM</a>
-	
+    <h1 class="article-title" itemprop="name">
+      常见设计模式和六大原则
     </h1>
   
 
 
   
   
-<a href="/2023/04/08/JVM/" class="archive-article-date">
-        <time datetime="2023-04-08T14:19:37.217Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>初次学习JVM，未完。。。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/JVM/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/JVM/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-突击3-SQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/">spring突击3-SQL</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.277Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>MySQL去重和事务隔离级别</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB3-SQL/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-突击2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB2/">spring突击2</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB2/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>IoC和DI的区别</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-突击1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%AA%81%E5%87%BB1/">spring突击1</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%AA%81%E5%87%BB1/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>包含几个常见问题：</p>
-<ol>
-<li>new一个字符串创建几个对象</li>
-<li>过滤器和拦截器的区别</li>
-<li>${}和#{}的区别</li>
-<li>spring有几种注入方式</li>
-<li>@Autowired和@Resource有什么区别</li>
-<li>springbean的作用域</li>
-<li>springbean的生命周期</li>
-<li>跨域问题</li>
-<li>springboot中的事务</li>
-</ol>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%AA%81%E5%87%BB1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java集合、SQL增删改查" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">java集合与sql CRUD</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" class="archive-article-date">
-        <time datetime="2023-04-08T13:44:36.267Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>java集合与sql CRUD</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常用设计模式、六大原则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/">常见设计模式和六大原则</a>
-	
-    </h1>
-  
-
-
-  
-  
 <a href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/" class="archive-article-date">
         <time datetime="2023-04-08T13:00:21.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
 </a>
@@ -694,13 +255,157 @@
 <p>六大原则：开闭原则、单一职责原则、里式替换原则、迪米特法则、接口隔离原则、依赖倒置原则DIP</p>
 <p>常见设计模式：工厂模式、单例模式、原型模式、外观模式、代理模式等</p>
 </blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/#more">more >></a>
-    
-    
+<span id="more"></span>
+
+
+<h1 id="设计模式六大原则"><a href="#设计模式六大原则" class="headerlink" title="设计模式六大原则"></a>设计模式六大原则</h1><p>1、开闭原则：</p>
+<blockquote>
+<p>在面向对象编程领域中，<br>开闭原则规定软件中的对象、类、模块和函数对<strong>扩展是开放</strong>的，对<strong>修改是封闭</strong>的。</p>
+</blockquote>
+<p>2、单一职责原则：</p>
+<blockquote>
+<p>当功能开发不是一次性的，随着业务发展而变化，就要把<strong>功能分别写开</strong>，<br>实现一个类一个功能，便于维护、扩展。</p>
+</blockquote>
+<p>3、里式替换原则：</p>
+<blockquote>
+<p>父类和子类的行为要保持与预期相符。</p>
+</blockquote>
+<p>4、迪米特法则：</p>
+<blockquote>
+<p>又称最少知道原则，是指一个对象类对于其他对象类来说，知道的越少越好。<br>也就是说，两个类之间不要有过多的耦合关系，保持最少关联性。</p>
+</blockquote>
+<p>5、接口隔离原则：</p>
+<blockquote>
+<p>把一个大接口打散成多个小接口</p>
+</blockquote>
+<p>6、依赖倒置原则DIP：</p>
+<blockquote>
+<p>即“面向接口编程”。高层模块不应该依赖于底层模块，二者都应该依赖于抽象。</p>
+</blockquote>
+<h1 id="常用设计模式"><a href="#常用设计模式" class="headerlink" title="常用设计模式"></a>常用设计模式</h1><p>分为创建者模式、结构型模式、行为型模式</p>
+<p><img src="/../images/Design_pattern.png" alt="设计模式"></p>
+<h2 id="创建型设计模式"><a href="#创建型设计模式" class="headerlink" title="创建型设计模式"></a>创建型设计模式</h2><h4 id="1、简单工厂模式"><a href="#1、简单工厂模式" class="headerlink" title="1、简单工厂模式"></a><strong>1、简单工厂模式</strong></h4><p><strong>(增加删除要修改工厂原来的代码，不符合开闭原则)</strong></p>
+<p><img src="/../images/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="简单工厂模式"></p>
+<blockquote>
+<p>含抽象产品、具体产品，具体工厂<br>简单工厂模式要求所有产品必须有共同的接口或者父类，是属于同一个产品系列。<br>没有采用工厂模式之前，对象的创建以及对象的使用没有分开，都要由开发者搞定。<br>解决：<br>将对象的创建和对象的使用分开(解耦)<br>对象的创建由专门的工厂搞定，开发者直接从工厂中获取已经创建好的产品即可。</p>
+</blockquote>
+<h4 id="2、工厂模式"><a href="#2、工厂模式" class="headerlink" title="2、工厂模式"></a><strong>2、工厂模式</strong></h4><p><img src="/../images/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png" alt="工厂模式"></p>
+<blockquote>
+<p> 含抽象产品、具体产品，<strong>抽象工厂</strong>、具体工厂<br>优点：实现了对象的调用和调用分离，降低客户端代码难度<br>缺点：需要额外编写代码，增加了工作量<br>适用情况：所有产品子类都有一个共同的父类(或接口)，属于同一产品系列。产品子列比较多，创建操作比较复杂。</p>
+</blockquote>
+<h4 id="3-单例模式"><a href="#3-单例模式" class="headerlink" title="3.单例模式"></a><strong>3.单例模式</strong></h4><p><strong>a.饿汉式单例模式</strong></p>
+<blockquote>
+<p>①. 构造方法使用private(禁止在类的外部直接new)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>②.提供一个private的自身类型的成员变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br></pre></td></tr></table></figure>
+
+<p>③.提供一个public static方法，返回已经创建好的实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">	<span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;;	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;<span class="keyword">return</span> instance&#125;;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>④.测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>&#123;</span><br><span class="line">	<span class="type">Singleton</span> <span class="variable">s1</span> <span class="operator">=</span> Singleton.getInstance();</span><br><span class="line">	<span class="type">Singleton</span> <span class="variable">s2</span> <span class="operator">=</span> Singleton.getInstance();</span><br><span class="line">	System.out.println(s1=s2);	<span class="comment">//返回为True，即为同一个实例</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优点：绝对保证只有一个实例<br>缺点：没有获取实例的时候，实例已经创建好了，后续可能没有使用，浪费空间。解决：懒汉式单例模式</p>
+</blockquote>
+<p><strong>b.懒汉式单例模式</strong></p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">	<span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;;	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance==<span class="literal">null</span>)&#123; instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>() &#125;</span><br><span class="line">		<span class="keyword">return</span> instance</span><br><span class="line">	&#125;;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优点：类加载的时候不创建实例，而在第一次请求实例时创建。资源利用率高。<br>缺点：单线程模式下可行，多线程模式下可能创建多个实例。</p>
+</blockquote>
+<p><strong>c.双重检测懒汉式单例模式</strong></p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line"><span class="comment">//必须使用volatile修饰，保证多线程情况下instance在多个线程之间的可见性和禁止指令重排序</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"><span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;;	</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(instance==<span class="literal">null</span>)&#123;	<span class="comment">//为了提高效率，已经创建了对象，就不用执行上锁等待的代码了</span></span><br><span class="line">		<span class="keyword">synchronized</span>(Singleton.class)&#123;	<span class="comment">//线程同步</span></span><br><span class="line">			<span class="keyword">if</span>(instance==<span class="literal">null</span>)&#123; instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>() &#125;	<span class="comment">//保证单例</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> instance</span><br><span class="line">&#125;;	</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决了饿汉和懒汉的缺点</p>
+</blockquote>
+<p><strong>d.静态内部类</strong></p>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span>&#123;&#125;;	</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">InnerClass</span>&#123;</span><br><span class="line">	<span class="comment">//提供静态的成员变量，创建对象并赋值</span></span><br><span class="line">	<span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span>&#123;<span class="keyword">return</span> InnerClass.instance&#125;;	</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<p><strong>e.枚举类</strong></p>
+<h4 id="4-原型模式"><a href="#4-原型模式" class="headerlink" title="4.原型模式"></a>4.原型模式</h4><blockquote>
+<p>创建一个实例，其余相似的实例用克隆来实现，代码简单，也提高效率。<br>关键点：<br>a.类要实现Cloneable接口<br>b.重写clone()方法，将protected权限修改为public，返回值建议由Object改成当前类。</p>
+</blockquote>
+<h2 id="结构型设计模式"><a href="#结构型设计模式" class="headerlink" title="结构型设计模式"></a>结构型设计模式</h2><h4 id="1-外观模式-门面模式"><a href="#1-外观模式-门面模式" class="headerlink" title="1.外观模式(门面模式)"></a>1.外观模式(门面模式)</h4><p>理解如图:</p>
+<p><img src="/../images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.png" alt="外观模式"></p>
+<p><img src="/../images/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F%E5%8E%9F%E7%90%86.png" alt="外观模式原理"></p>
+<h4 id="2-装饰模式"><a href="#2-装饰模式" class="headerlink" title="2.装饰模式"></a>2.装饰模式</h4><blockquote>
+<p>装饰模式指的是在不必改变原类文件和使用继承的情况下，动态的扩展一个对象的功能。<br>它是通过创建一个包装对象，也就是装饰来包裹真实对象。装饰模式又叫包装( Wrapper) 模式</p>
+<p>装饰模式是继承的一种替换解决方案。可以动态扩展一个类的功能，提供了比继承更具有弹性的替代方案。</p>
+</blockquote>
+<blockquote>
+<p>使用组合而不是继承，更具有灵活性，有效的减少子类的数量。<br>完整的装饰模式包括四部分：<br>a.一个抽象的蛋糕类	Cake						InputStream<br>b.多个具体的蛋糕类	ChocolateCake  CreamCake		节点流 FileInputStream  ByteArrayInputStream<br>c.一个抽象的装饰类	Decorator					FileterInputStream<br>d.多个具体的装饰类	PipDecorator   CardDecorator	处理流 BufferedInputStream DataInputStream</p>
+</blockquote>
+<h4 id="3-代理模式"><a href="#3-代理模式" class="headerlink" title="3.代理模式"></a>3.代理模式</h4><p><em>给一个对象提供一个代理</em></p>
+<p>a.静态代理</p>
+<blockquote>
+<p>优点：可以做到开闭原则的情况下对目标对象进行功能的扩展。<br>缺点：一个代理类只能代理一个接口，工作量太大，必须先有接口再有代理类，接口一旦发生改变，代理类也要修改</p>
+</blockquote>
+<p>b.动态代理</p>
+<blockquote>
+</blockquote>
+<p>未完待续。。。</p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.png">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          yhking
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://www.yhking.xyz/2023/04/08/常用设计模式、六大原则/" title="常见设计模式和六大原则" target="_blank">https://www.yhking.xyz/2023/04/08/常用设计模式、六大原则/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -721,16 +426,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://www.yhking.xyz/2023/04/08/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2023/04/08/Java%E9%9B%86%E5%90%88%E3%80%81SQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java集合与sql CRUD
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/08/%E7%94%9F%E6%B4%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">生活</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -751,376 +525,14 @@
 
 
 
-  
-    <article id="post-生活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%94%9F%E6%B4%BB/">生活</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%94%9F%E6%B4%BB/" class="archive-article-date">
-        <time datetime="2023-04-08T11:22:12.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>生活不如意，十有八九</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%94%9F%E6%B4%BB/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">essay</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%94%9F%E6%B4%BB/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-springbean的调用链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">Spring bean 的调用链</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/" class="archive-article-date">
-        <time datetime="2023-04-08T10:03:35.097Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>spring 的一些执行过程，如ioc的加载过程，bean的生命周期，aop执行的时机。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-Scrapy的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">Scrapy的基础使用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Scrapy是适用于Python的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/9815698">自动化测试</a>。Scrapy吸引人的地方在于它是一个框架，任何人都可以根据需求方便的修改。它也提供了多种类型爬虫的基类，如BaseSpider、sitemap爬虫等，最新版本又提供了web2.0爬虫的支持。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">frame</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-zsh美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">终端美化</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Zsh（Z-shell）是一款用于交互式使用的shell，也可以作为脚本解释器来使用。其包含了 bash，ksh，tcsh 等其他shell中许多优秀功能，也拥有诸多自身特色。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beauty</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1160,8 +572,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
