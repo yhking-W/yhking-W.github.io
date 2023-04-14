@@ -21,8 +21,22 @@
 <meta property="og:image" content="https://www.yhking.xyz/images/%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B.png">
 <meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png">
 <meta property="og:image" content="https://www.yhking.xyz/images/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/jvm%E7%BB%93%E6%9E%84%E4%BA%8C%E6%AC%A1%E7%90%86%E8%A7%A3%E5%9B%BE.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%85%83%E7%A9%BA%E9%97%B4%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E5%AD%98%E6%94%BE%E6%97%B6%E6%9C%BA.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%85%83%E7%A9%BA%E9%97%B4%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E9%94%80%E6%AF%81%E6%97%B6%E6%9C%BA.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E6%96%B0%E7%94%9F%E4%BB%A3%E5%92%8C%E8%80%81%E5%B9%B4%E4%BB%A3%E6%AF%94%E4%BE%8B.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E6%A0%87%E8%AE%B0%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B61.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B62.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B63.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B64.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B65.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B66.png">
+<meta property="og:image" content="https://www.yhking.xyz/images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B67.png">
 <meta property="article:published_time" content="2023-04-08T14:19:37.217Z">
-<meta property="article:modified_time" content="2023-04-08T14:22:05.574Z">
+<meta property="article:modified_time" content="2023-04-12T08:39:09.792Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -296,6 +310,85 @@
 </blockquote>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>双亲委派模型是和 Java 中多个类加载器（启动类加载器、扩展加载器、应用程序类加载器）的运行规则，通过这个（双亲委派模型）规则可以避免类的非安全问题和类被重复加载的问题，但它也遇到了一些问题，比如 JNDI 和 JDBC 不能通过这个规则进行加载，它需要通过打破双亲委派的模型的方式来加载。</p>
 <p>未完待续。。。</p>
+<h1 id="二次学习JVM"><a href="#二次学习JVM" class="headerlink" title="二次学习JVM"></a>二次学习JVM</h1><h5 id="JVM结构二次理解图："><a href="#JVM结构二次理解图：" class="headerlink" title="JVM结构二次理解图："></a>JVM结构二次理解图：</h5><p><img src="/../images/jvm%E7%BB%93%E6%9E%84%E4%BA%8C%E6%AC%A1%E7%90%86%E8%A7%A3%E5%9B%BE.png" alt="jvm结构二次理解图"></p>
+<h5 id="哪些区域会产生内存溢出？"><a href="#哪些区域会产生内存溢出？" class="headerlink" title="哪些区域会产生内存溢出？"></a>哪些区域会产生内存溢出？</h5><p>答：<strong>除了程序计数器，其他四个区域都会产生内存溢出</strong>。</p>
+<p>出现 OutOfMemoryError（OOM） 的情况</p>
+<ul>
+<li>堆内存耗尽 - 对象越来越多，且一直在使用，不能被垃圾回收</li>
+<li>方法区内存耗尽 - 加载的类越来越多，很多框架都会在运行期间动态产生新的类</li>
+<li>虚拟机栈累计 - 每个线程最多会占用 1 M 内存，线程个数越来越多，而又长时间运行不销毁</li>
+</ul>
+<p>出现 StackOverflowError 的区域</p>
+<ul>
+<li>虚拟机栈内部 - 方法调用次数过多</li>
+</ul>
+<h5 id="方法区与永久代、元空间之间的关系"><a href="#方法区与永久代、元空间之间的关系" class="headerlink" title="方法区与永久代、元空间之间的关系"></a>方法区与永久代、元空间之间的关系</h5><ol>
+<li>方法区是JVM规范中<strong>定义的</strong>一块内存区域，用来存储类元数据、方法字节码、即时编译器需要的信息等</li>
+<li>永久代是 Hotspot 虚拟机对 JVM 规范的实现（1.8前）</li>
+<li>元空间是 Hotspot 虚拟机对 JVM 规范的实现（1.8后），使用本地内存作为这些信息的存储空间</li>
+</ol>
+<p>元空间类的存放&#x2F;销毁时机</p>
+<p><img src="/../images/%E5%85%83%E7%A9%BA%E9%97%B4%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E5%AD%98%E6%94%BE%E6%97%B6%E6%9C%BA.png" alt="元空间类信息的存放时机"></p>
+<p><img src="/../images/%E5%85%83%E7%A9%BA%E9%97%B4%E7%B1%BB%E4%BF%A1%E6%81%AF%E7%9A%84%E9%94%80%E6%AF%81%E6%97%B6%E6%9C%BA.png" alt="元空间类信息的销毁时机"></p>
+<h5 id="JVM-内存参数"><a href="#JVM-内存参数" class="headerlink" title="JVM 内存参数"></a>JVM 内存参数</h5><p>JVM 配置参数 -Xmx10240m -Xms10240m -Xmn5120m -XX:SurvivorRatio&#x3D;3 其最小内存值和Survivor区总大小分别是</p>
+<ul>
+<li>-Xmx 指虚拟机最大内存是多少  10240m(兆字节)</li>
+<li>-Xms 指虚拟机最小内存是多少  10240m(兆)</li>
+<li>-Xmn 指虚拟机中新生代的内存数 5120m(兆)</li>
+<li>-Xss 控制每个线程的大小</li>
+</ul>
+<p>新生代与老年代的比例：</p>
+<p><img src="/../images/%E6%96%B0%E7%94%9F%E4%BB%A3%E5%92%8C%E8%80%81%E5%B9%B4%E4%BB%A3%E6%AF%94%E4%BE%8B.png" alt="新生代和老年代比例"></p>
+<h5 id="JVM-垃圾回收算法"><a href="#JVM-垃圾回收算法" class="headerlink" title="JVM 垃圾回收算法"></a>JVM 垃圾回收算法</h5><ol>
+<li><p>标记清除（<strong>大多不再使用</strong>）</p>
+<p>标记不会被清除的对象GC时不会被清除。</p>
+<p>缺点：会有大量内存碎片，不利于使用（目前JVM垃圾回收已不再使用该算法）</p>
+<p><img src="/../images/%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.png" alt="标记清除算法"></p>
+</li>
+<li><p>标记整理（经常用于<strong>老年代</strong>的垃圾回收）</p>
+<p>标记清除的改进版，都是先是沿着GC Root（一定不会被清除的对象）进行标记（被引用了的对象），然后把没有使用的对象进行释放，最后多一步整理，把被标记的没有被GC的对象的内存空间整理到一起，留下的就是连续的内存，不会有内存碎片</p>
+<p>缺点：效率降低</p>
+<p><img src="/../images/%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.png" alt="标记整理算法"></p>
+</li>
+<li><p>标记复制（经常用于<strong>新生代</strong>的垃圾回收）</p>
+<p>标记复制在经过 GC Root 标记之后（已经知道哪些对象不需要回收），会把不需要回收的对象复制到一块连续的内存空间中，然后释放之前的所有内存空间。</p>
+<p>不会有碎片问题，效率也比标记整理高</p>
+<p>缺点：内存占用</p>
+<p><img src="/../images/%E6%A0%87%E8%AE%B0%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png" alt="标记复制算法"></p>
+</li>
+</ol>
+<h5 id="GC和分代回收算法"><a href="#GC和分代回收算法" class="headerlink" title="GC和分代回收算法"></a>GC和分代回收算法</h5><ul>
+<li>GC的目的在于实现无用对象内存自动释放，减少内存碎片、加快分配速度</li>
+<li>GC 要点<ol>
+<li>回收区域是堆内存，不包括虚拟机栈，在方法调用结束会自动释放方法占用内存</li>
+<li>判断无用对象，使用可达性分析算法，三色标记法标记存活对象，回收未标记对象</li>
+<li>GC 具体的实现称为垃圾回收器</li>
+<li>GC 大都采用了分代回收思想，理论依据是大部分对象朝生夕灭，用完立刻就可以回收，另有少部分对象会长时间存活，每次很难回收，根据这两类对象的特性将回收区域分为<strong>新生代</strong>和<strong>老年代</strong>，不同区域应用不同的回收策略</li>
+<li>根据 GC 的规模可以分成 Minor GC（小范围回收），Mixed GC（二者之间），Full GC（全部回收）</li>
+</ol>
+</li>
+</ul>
+<h5 id="分代回收"><a href="#分代回收" class="headerlink" title="分代回收"></a>分代回收</h5><ol>
+<li>伊甸园eden，最初对象都分配到这里，与幸存区合称新生代</li>
+<li>幸存区survivor，当伊甸园内存不足，回收后的幸存对象到这里，分成from和 to，采用标记复制算法</li>
+<li>老年代 old，当幸存区对象熬过几次回收(最多15次)，晋升到老年代(幸存区内存不足或大对象会导致提前晋升)</li>
+</ol>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B61.png" alt="分代回收1"></p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B62.png" alt="分代回收2"></p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B63.png" alt="分代回收3"></p>
+<p>一次垃圾回收完成！</p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B64.png" alt="分代回收4"></p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B65.png" alt="分代回收5"></p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B66.png" alt="分代回收6"></p>
+<p><img src="/../images/%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B67.png" alt="分代回收7"></p>
+<p>第二次垃圾回收完成！</p>
+<ul>
+<li><p>GC 规模</p>
+<p>Minor GC发生在新生代的垃圾回收，暂停时间短</p>
+<p>Mixed GC新生代+老年代部分区域的垃圾回收，G1 收集器特有</p>
+<p>Full GC新生代+老年代完整垃圾回收，暂停时间长，应尽力避免</p>
+</li>
+</ul>
 
     
 
