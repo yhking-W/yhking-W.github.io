@@ -17,18 +17,18 @@
 <meta property="og:site_name" content="YHKING">
 <meta property="og:description" content="前言 包含几个常见问题：  new一个字符串创建几个对象 过滤器和拦截器的区别 ${}和#{}的区别 spring有几种注入方式 @Autowired和@Resource有什么区别 springbean的作用域 springbean的生命周期 跨域问题 springboot中的事务">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.yhking.xyz/images/request%E8%AF%B7%E6%B1%82%E5%88%B0Controller%E7%9A%84%E8%B7%AF%E5%BE%84.png">
-<meta property="og:image" content="https://www.yhking.xyz/images/%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%9B%BE.png">
-<meta property="og:image" content="https://www.yhking.xyz/images/%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BB%A3%E7%90%86%E8%B0%83%E7%94%A8%E6%95%88%E6%9E%9C%E5%9B%BE.png">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/f57dd655e09c43d886e1d4ad520f7852">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/491e50918bbd430c853c8e2ba1b48547">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/15fe06b6b915426ea2191dbb9b3204ce">
 <meta property="article:published_time" content="2023-04-08T13:44:36.269Z">
-<meta property="article:modified_time" content="2023-04-14T10:29:32.958Z">
+<meta property="article:modified_time" content="2023-04-17T10:07:28.866Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.yhking.xyz/images/request%E8%AF%B7%E6%B1%82%E5%88%B0Controller%E7%9A%84%E8%B7%AF%E5%BE%84.png">
+<meta name="twitter:image" content="https://s1.vika.cn/space/2023/04/17/f57dd655e09c43d886e1d4ad520f7852">
   
   
-    <link rel="icon" href="/img/favicon.ico">
+    <link rel="icon" href="https://s1.vika.cn/space/2023/04/17/1ea57aab0ac944288a08bbf6500bd649">
   
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
@@ -66,7 +66,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/author.jpg" class="js-avatar">
+			<img src="https://s1.vika.cn/space/2023/04/17/6c35425e8f22443e859bf52bbaae520e" class="js-avatar">
 		</a>
 		<hgroup>
 			<h1 class="header-author"><a href="/">yhking</a></h1>
@@ -120,7 +120,7 @@
 					
 				
 					
-						<a class="weixin" href="/img/weixin.png" 
+						<a class="weixin" href="https://s1.vika.cn/space/2023/04/17/caa33b95633c4e469b2e6a9c5874b9c9" 
 												title="wechat" target="_blank"><i class="icon-weixin"></i></a>
 					
 				
@@ -149,7 +149,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/">
-					<img src="/img/author.jpg" class="js-avatar">
+					<img src="https://s1.vika.cn/space/2023/04/17/6c35425e8f22443e859bf52bbaae520e" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -188,7 +188,7 @@
 					
 						
 						<a class="weixin" target="_blank" 
-							href="/img/weixin.png" title="wechat"><i class="icon-weixin"></i></a>
+							href="https://s1.vika.cn/space/2023/04/17/caa33b95633c4e469b2e6a9c5874b9c9" title="wechat"><i class="icon-weixin"></i></a>
 						
 					
 				</div>
@@ -291,16 +291,16 @@
 <blockquote>
 <p>请求的执行顺序是：请求进入容器(Tomcat中的request请求) &gt; 进入过滤器Filter &gt; 进入 Servlet &gt; 进入拦截器Interceptor &gt; 执行控制器（Controller）</p>
 </blockquote>
-<p><img src="/../images/request%E8%AF%B7%E6%B1%82%E5%88%B0Controller%E7%9A%84%E8%B7%AF%E5%BE%84.png" alt="request请求到Controller的路径"></p>
+<p><img src="https://s1.vika.cn/space/2023/04/17/f57dd655e09c43d886e1d4ad520f7852" alt="request请求到Controller的路径"></p>
 </li>
 <li><p>实现不同；</p>
 <blockquote>
 <p><strong>过滤器是基于方法回调实现的</strong>，我们在上面实现过滤器的时候就会发现，当我们要执行下一个过滤器或下一个流程时，需要调用 FilterChain 对象的 doFilter 方法进行回调执行。</p>
 <p>拦截器是基于动态代理（底层是反射）实现的</p>
 </blockquote>
-<p><img src="/../images/%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%9B%BE.png" alt="拦截器动态代理图"></p>
+<p><img src="https://s1.vika.cn/space/2023/04/17/491e50918bbd430c853c8e2ba1b48547" alt="拦截器动态代理图"></p>
 <p>代理调用的效果:</p>
-<p><img src="/../images/%E6%8B%A6%E6%88%AA%E5%99%A8%E4%BB%A3%E7%90%86%E8%B0%83%E7%94%A8%E6%95%88%E6%9E%9C%E5%9B%BE.png" alt="拦截器代理调用效果图"></p>
+<p><img src="https://s1.vika.cn/space/2023/04/17/15fe06b6b915426ea2191dbb9b3204ce" alt="拦截器代理调用效果图"></p>
 </li>
 <li><p>支持的项目类型不同</p>
 <blockquote>
@@ -611,18 +611,18 @@
           <span class="tooltip-content">
             <span class="tooltip-text">
               <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                <p class="reward-p"><i class="icon icon-quo-left"></i>多谢（回礼）！<i
                     class="icon icon-quo-right"></i></p>
                 <div class="reward-box">
                   
                   <div class="reward-box-item">
-                    <img class="reward-img" src="/img/alipay.png">
+                    <img class="reward-img" src="https://s1.vika.cn/space/2023/04/17/c468c729b9014d23ba643e8cde4457ca">
                     <span class="reward-type">支付宝</span>
                   </div>
                   
                   
                   <div class="reward-box-item">
-                    <img class="reward-img" src="/img/wechat.png">
+                    <img class="reward-img" src="https://s1.vika.cn/space/2023/04/17/52c8959e785a4600a1e175ce1d289e54">
                     <span class="reward-type">微信</span>
                   </div>
                   
@@ -910,10 +910,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">study</a>
               </li>
              
@@ -922,11 +918,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,11 +930,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
