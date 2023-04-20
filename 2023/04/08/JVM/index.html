@@ -18,6 +18,7 @@
 <meta property="og:description" content="前言 JVM的理解   未完待续。。。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/ffa6b57eb01d4b7fa4d8dd3af342c97b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/19/0b6820d38acc4cd9ab24a893b861c4ab">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/5eec9a42b63f486ca31fea6ae05439ea">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/4372634c67cf4892aecf53aad4c57ab1">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/a075bfef91db4156814bf195357b114a">
@@ -36,7 +37,7 @@
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/ba221827b550480e8e4f4e98651d4ca3">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/b19391f7759949ec816429c769dcb622">
 <meta property="article:published_time" content="2023-04-08T14:19:37.217Z">
-<meta property="article:modified_time" content="2023-04-17T10:16:28.965Z">
+<meta property="article:modified_time" content="2023-04-20T04:44:09.517Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -270,9 +271,9 @@
 <span id="more"></span>
 
 
-<h1 id="1-JVM结构"><a href="#1-JVM结构" class="headerlink" title="1.JVM结构"></a>1.JVM结构</h1><p>结构简图：</p>
+<h1 id="JVM结构"><a href="#JVM结构" class="headerlink" title="JVM结构"></a>JVM结构</h1><p>结构简图：</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/ffa6b57eb01d4b7fa4d8dd3af342c97b" alt="JVM结构简图"></p>
-<h3 id="native"><a href="#native" class="headerlink" title="native"></a>native</h3><ul>
+<h2 id="1-本地方法栈（Native-Method-Stacks）"><a href="#1-本地方法栈（Native-Method-Stacks）" class="headerlink" title="1. 本地方法栈（Native Method Stacks）"></a>1. 本地方法栈（Native Method Stacks）</h2><ul>
 <li>凡是带了<strong>native关键字</strong>的，说明Java的作用范围达不到了，会去调用<strong>底层C语言</strong>的库！</li>
 <li>调用本地方法栈时</li>
 <li>会调用本地方法接口 JNI（Java Native Interface）</li>
@@ -282,24 +283,80 @@
 <li>在最终执行的时候，加载本地方法库的方法通过JNI（本地方法接口）</li>
 <li>正常情况下不用Native，在操作驱动打印机、操作系统时才会用到</li>
 </ul>
-<h3 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h3><p>（程序计数器）</p>
-<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>Method Area 方法区</p>
-<p>​	方法区是被所有线程共享的，所有字段和方法字节码，以及一些特殊方法，如构造方法，接口代码也在此定义，简单说，所有定义的方法的信息都保存在该区域，<strong>此区域所欲共享区间。</strong></p>
+<blockquote>
+<p>加有 native 的方法，就是在本地方法栈中，通过本地方法接口调用 C、C++写的方法操作底层，如 Object 类的 clone 方法，hashMap方法等。</p>
+</blockquote>
+<h2 id="2-PC寄存器（程序计数器）"><a href="#2-PC寄存器（程序计数器）" class="headerlink" title="2. PC寄存器（程序计数器）"></a>2. PC寄存器（程序计数器）</h2><p>（程序计数器）记录程序执行的位置。</p>
+<h2 id="3-方法区（Method-Area）"><a href="#3-方法区（Method-Area）" class="headerlink" title="3. 方法区（Method Area）"></a>3. 方法区（Method Area）</h2><p>方法区是<strong>逻辑概念</strong>（线程共享），所有字段和方法字节码，以及一些特殊方法，如构造方法，接口代码也在此定义，简单说，所有定义的方法的信息都保存在该区域，<strong>此区域所欲共享区间。</strong></p>
 <p>静态变量、常量、类信息（构造方法、接口定义）、运行时的常量池存在方法区中，但是实例变量存在堆内存中，和方法区无关。</p>
-<h3 id="一个类的创建过程"><a href="#一个类的创建过程" class="headerlink" title="一个类的创建过程"></a>一个类的创建过程</h3><p><img src="https://s1.vika.cn/space/2023/04/17/5eec9a42b63f486ca31fea6ae05439ea" alt="一个对象的创建过程"></p>
-<h1 id="2-什么是双亲委派模型"><a href="#2-什么是双亲委派模型" class="headerlink" title="2. 什么是双亲委派模型"></a>2. <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vipstone/p/17087949.html">什么是双亲委派模型</a></h1><p>双亲委派模型是 Java 类加载器的一种工作模式，通过这种工作模式，Java 虚拟机将类文件加载到内存中，这样就保证了 Java 程序能够正常的运行起来。</p>
-<h2 id="1-类加载器"><a href="#1-类加载器" class="headerlink" title="1.类加载器"></a>1.类加载器</h2><p>双亲委派模型针对的是 Java 虚拟机中三个类加载器的，这三个类加载器分别是：</p>
+<blockquote>
+<p><em>Metaspace（元空间 1.8）和 PermGen（永久代 1.7）是对<strong>方法区的实现</strong></em></p>
+<p>在 Java 1.8 开始移除了 PermGen（永久代），加入了 Metaspace（元空间）的概念。位置在本地内存，如下图 3.</p>
+</blockquote>
+<p>定义：存储与类的结构相关的信息，如<strong>成员变量</strong>、<strong>方法数据</strong>、<strong>成员方法代码</strong>和<strong>构造器方法代码</strong>，和<strong>一些特殊方法</strong>。</p>
+<p>方法区在 JVM 虚拟机启动的时候被创建。<strong>逻辑上</strong>是堆的组成部分。</p>
+<p>包含了运行时常量池</p>
+<p>字节码文件包含： 类的基本信息 常量池（一张常量表） 类方法定义 虚拟机指令</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jvm;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 59400</span></span><br><span class="line"><span class="comment"> * 常量池 - 运行时常量池 - 串池</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// StringTable [&quot;a&quot;, &quot;b&quot;, &quot;ab&quot;]  hashtable 结构,不能扩容  （串池）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JVMStringTable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 常量池中的信息，都会被加载到运行时常量波中, 这时 a b ab 都是常量池中的符号，还没有变为 java 字符串对象</span></span><br><span class="line">    <span class="comment">// Idc #2 会把 a 符号变为 “a”字符串对象</span></span><br><span class="line">    <span class="comment">// Idc #3 会把 b 符号为“b”字符串对象</span></span><br><span class="line">    <span class="comment">// Idc #4 会把 ab 符号变为 “ab”字符串对象</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span>;    <span class="comment">// 懒惰的</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;b&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> s1 + s2; <span class="comment">// new StringBuilder().append(s1).append(s2).toString();   new String(&quot;ab&quot;)</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span>+<span class="string">&quot;b&quot;</span>; <span class="comment">// javac 在编译期间的优化,结果已经确定为ab</span></span><br><span class="line"></span><br><span class="line">        System.out.println(s4 == s3);   <span class="comment">// false</span></span><br><span class="line">        System.out.println(s5 == s3);   <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>上面对象s1,s2,s3,s5存在常量池中，s4存在堆中（元空间有s3的引用）</p>
+<p>s3和s4的值都是“ab”，但它们不是一个对象，s3在常量池中，s4在堆中，所以不相等。</p>
+</blockquote>
+<p>运行时常量池中的 StringTable （串池）（StringTable  1.6的时候存在常量池中，常量池存在堆中）</p>
+<p>（StringTable  1.7之后就被放在堆内存中了），因为 StringTable  需要频繁 GC ，但永久代（元空间）GC 频率较低，只有 full 的时候才会GC。</p>
+<p><img src="https://s1.vika.cn/space/2023/04/19/0b6820d38acc4cd9ab24a893b861c4ab" alt="StringTable的位置-tuya"></p>
+<center>图 3</center>
+
+<p><strong>StringTable 特性</strong></p>
+<ul>
+<li>常量池中的字符串仅是符号，第一次用到时才变为对象</li>
+<li>利用串池的机制，来避免重复创建字符串对象 hashtable 结构</li>
+<li>字符串变量拼接的原理是 StringBuilder (1.8)</li>
+<li>字符串常量拼接的原理是编译期优化</li>
+<li>可以使用 intern 方法，主动将串池中还没有的字符串对象放入串池</li>
+</ul>
+<h2 id="4-堆（Heap）"><a href="#4-堆（Heap）" class="headerlink" title="4. 堆（Heap）"></a>4. 堆（Heap）</h2><ul>
+<li>通过 new 关键字，<strong>创建的对象</strong>都会使用堆内存</li>
+<li>它是线程共享的，需要考虑线程安全问题</li>
+<li>有垃圾回收机制</li>
+</ul>
+<h2 id="5-虚拟机栈（JVM-Stacks）"><a href="#5-虚拟机栈（JVM-Stacks）" class="headerlink" title="5. 虚拟机栈（JVM Stacks）"></a>5. 虚拟机栈（JVM Stacks）</h2><p>方法执行时 会把方法放入栈内存（虚拟机栈）中</p>
+<ol>
+<li><p>垃圾回收是否涉及到栈内存？</p>
+<p>栈中不包含GC，栈中主是栈帧内存 栈帧使用完后会被弹出栈 自动回收 不需要GC</p>
+</li>
+<li><p>栈内存是越打越好吗？</p>
+<p>栈内存越大反而会影响线程数的减少，并不是越大越好。</p>
+</li>
+<li><p>方法内的局部变量是否线程安全？</p>
+<p>局部变量在线程私有的情况下，每个线程都会有一份栈帧，里面包含了一份局部变量，线程之间互不干扰，属于线程安全。<br>如果变量加上 static 关键字，会变成线程共享的，多个线程同时处理一份变量，属于线程不安全。</p>
+<ul>
+<li>如果方法局部变量没有逃离方法的作用范围，它就是线程安全的。</li>
+<li>局部变量引用了对象，并逃离了方法的作用范围，需要考虑线程安全问题。</li>
+</ul>
+</li>
+<li><p>什么情况下会导致栈内存溢出？</p>
+<ul>
+<li>栈帧过多</li>
+<li>栈帧过大（不太容易出现）</li>
+</ul>
+</li>
+</ol>
+<h2 id="一个类的创建过程"><a href="#一个类的创建过程" class="headerlink" title="一个类的创建过程"></a>一个类的创建过程</h2><p><img src="https://s1.vika.cn/space/2023/04/17/5eec9a42b63f486ca31fea6ae05439ea" alt="一个对象的创建过程"></p>
+<h1 id="什么是双亲委派模型"><a href="#什么是双亲委派模型" class="headerlink" title="什么是双亲委派模型"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/vipstone/p/17087949.html">什么是双亲委派模型</a></h1><p>双亲委派模型是 Java 类加载器的一种工作模式，通过这种工作模式，Java 虚拟机将类文件加载到内存中，这样就保证了 Java 程序能够正常的运行起来。</p>
+<h2 id="1-类加载器"><a href="#1-类加载器" class="headerlink" title="1. 类加载器"></a>1. 类加载器</h2><p>双亲委派模型针对的是 Java 虚拟机中三个类加载器的，这三个类加载器分别是：</p>
 <ol>
 <li>启动类加载器（Bootstrap ClassLoader）</li>
 <li>扩展类加载器（Extension ClassLoader）</li>
 <li>应用程序类加载器（Application ClassLoader）</li>
 </ol>
 <p><img src="https://s1.vika.cn/space/2023/04/17/4372634c67cf4892aecf53aad4c57ab1" alt="双亲委派"></p>
-<h4 id="1-1-启动类加载器"><a href="#1-1-启动类加载器" class="headerlink" title="1.1 启动类加载器"></a>1.1 启动类加载器</h4><p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，它是用来加载 <JAVA_HOME>\jre\lib\rt.jar 和 resources.jar 等 jar 包的。</p>
+<h3 id="1-1-启动类加载器"><a href="#1-1-启动类加载器" class="headerlink" title="1.1 启动类加载器"></a>1.1 启动类加载器</h3><p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，它是用来加载 <JAVA_HOME>\jre\lib\rt.jar 和 resources.jar 等 jar 包的。</p>
 <p>启动类加载器（Bootstrap ClassLoader）是由 C++ 实现的，而这个 C++ 实现的类加载器在 Java 中是没有与之对应的类的。</p>
-<h4 id="1-2-扩展类加载器"><a href="#1-2-扩展类加载器" class="headerlink" title="1.2 扩展类加载器"></a>1.2 扩展类加载器</h4><p>扩展类加载器是用来加载 <JAVA_HOME>\jre\lib\ext 目录下 jar 包的。</p>
-<h4 id="1-3-应用程序类加载器"><a href="#1-3-应用程序类加载器" class="headerlink" title="1.3 应用程序类加载器"></a>1.3 应用程序类加载器</h4><p>应用程序类加载器是用来加载 classpath 也就是用户的所有类的。</p>
-<h2 id="2-双亲委派模型"><a href="#2-双亲委派模型" class="headerlink" title="2.双亲委派模型"></a>2.双亲委派模型</h2><p>双亲委派模型的执行流程是这样的：<br>1、当加载一个类时，会先从<strong>应用程序类加载器</strong>的<strong>缓存</strong>里查找相应的类，如果能找到就返回对象，如果找不到就执行下面流程；</p>
+<h3 id="1-2-扩展类加载器"><a href="#1-2-扩展类加载器" class="headerlink" title="1.2 扩展类加载器"></a>1.2 扩展类加载器</h3><p>扩展类加载器是用来加载 <JAVA_HOME>\jre\lib\ext 目录下 jar 包的。</p>
+<h3 id="1-3-应用程序类加载器"><a href="#1-3-应用程序类加载器" class="headerlink" title="1.3 应用程序类加载器"></a>1.3 应用程序类加载器</h3><p>应用程序类加载器是用来加载 classpath 也就是用户的所有类的。</p>
+<h2 id="2-双亲委派模型"><a href="#2-双亲委派模型" class="headerlink" title="2. 双亲委派模型"></a>2. 双亲委派模型</h2><p>双亲委派模型的执行流程是这样的：<br>1、当加载一个类时，会先从<strong>应用程序类加载器</strong>的<strong>缓存</strong>里查找相应的类，如果能找到就返回对象，如果找不到就执行下面流程；</p>
 <p>2、在<strong>扩展加载器<em>缓存</em></strong>中查找相应的类，如果能找到就返回对象，如果找不到就继续下面流程；</p>
 <p>3、在<strong>启动类加载器</strong>中查询相应的类，如果找到就返回对象，如果找不到就继续下面流程；</p>
 <p>4、在<strong>扩展加载器</strong>中查找并加载类，如果能找到就返回对象，并将对象加入到缓存中，如果找不到就继续下面流程；</p>
@@ -308,10 +365,10 @@
 <blockquote>
 <p>一般“双亲”指的是“父亲”和“母亲”，而在这里“双亲”指的是类加载类先向上找，再向下找的流程就叫做双亲委派模型。</p>
 </blockquote>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>双亲委派模型是和 Java 中多个类加载器（启动类加载器、扩展加载器、应用程序类加载器）的运行规则，通过这个（双亲委派模型）规则可以避免类的非安全问题和类被重复加载的问题，但它也遇到了一些问题，比如 JNDI 和 JDBC 不能通过这个规则进行加载，它需要通过打破双亲委派的模型的方式来加载。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>双亲委派模型是和 Java 中多个类加载器（启动类加载器、扩展加载器、应用程序类加载器）的运行规则，通过这个（双亲委派模型）规则可以避免类的非安全问题和类被重复加载的问题，但它也遇到了一些问题，比如 JNDI 和 JDBC 不能通过这个规则进行加载，它需要通过打破双亲委派的模型的方式来加载。</p>
 <p>未完待续。。。</p>
-<h1 id="二次学习JVM"><a href="#二次学习JVM" class="headerlink" title="二次学习JVM"></a>二次学习JVM</h1><h3 id="JVM结构二次理解图："><a href="#JVM结构二次理解图：" class="headerlink" title="JVM结构二次理解图："></a>JVM结构二次理解图：</h3><p><img src="https://s1.vika.cn/space/2023/04/17/2aef89e54174489aabf91354546eb207" alt="jvm结构二次理解图"></p>
-<h3 id="哪些区域会产生内存溢出？"><a href="#哪些区域会产生内存溢出？" class="headerlink" title="哪些区域会产生内存溢出？"></a>哪些区域会产生内存溢出？</h3><p>答：<strong>除了程序计数器，其他四个区域都会产生内存溢出</strong>。</p>
+<h1 id="二次学习JVM"><a href="#二次学习JVM" class="headerlink" title="二次学习JVM"></a>二次学习JVM</h1><h2 id="1-JVM结构二次理解图："><a href="#1-JVM结构二次理解图：" class="headerlink" title="1. JVM结构二次理解图："></a>1. JVM结构二次理解图：</h2><p><img src="https://s1.vika.cn/space/2023/04/17/2aef89e54174489aabf91354546eb207" alt="jvm结构二次理解图"></p>
+<h2 id="2-哪些区域会产生内存溢出？"><a href="#2-哪些区域会产生内存溢出？" class="headerlink" title="2. 哪些区域会产生内存溢出？"></a>2. 哪些区域会产生内存溢出？</h2><p>答：<strong>除了程序计数器，其他四个区域都会产生内存溢出</strong>。</p>
 <p>出现 OutOfMemoryError（OOM） 的情况</p>
 <ul>
 <li>堆内存耗尽 - 对象越来越多，且一直在使用，不能被垃圾回收</li>
@@ -322,7 +379,7 @@
 <ul>
 <li>虚拟机栈内部 - 方法调用次数过多</li>
 </ul>
-<h3 id="方法区与永久代、元空间之间的关系"><a href="#方法区与永久代、元空间之间的关系" class="headerlink" title="方法区与永久代、元空间之间的关系"></a>方法区与永久代、元空间之间的关系</h3><ol>
+<h2 id="3-方法区与永久代、元空间之间的关系"><a href="#3-方法区与永久代、元空间之间的关系" class="headerlink" title="3. 方法区与永久代、元空间之间的关系"></a>3. 方法区与永久代、元空间之间的关系</h2><ol>
 <li>方法区是JVM规范中<strong>定义的</strong>一块内存区域，用来存储类元数据、方法字节码、即时编译器需要的信息等</li>
 <li>永久代是 Hotspot 虚拟机对 JVM 规范的实现（1.8前）</li>
 <li>元空间是 Hotspot 虚拟机对 JVM 规范的实现（1.8后），使用本地内存作为这些信息的存储空间</li>
@@ -330,7 +387,7 @@
 <p>元空间类的存放&#x2F;销毁时机</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/6fb462e80f3540c2b4fc984c1b41ac92" alt="元空间类信息的存放时机"></p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/0b685060bf4141a582e851ed3d034906" alt="元空间类信息的销毁时机"></p>
-<h3 id="JVM-内存参数"><a href="#JVM-内存参数" class="headerlink" title="JVM 内存参数"></a>JVM 内存参数</h3><p>JVM 配置参数 -Xmx10240m -Xms10240m -Xmn5120m -XX:SurvivorRatio&#x3D;3 其最小内存值和Survivor区总大小分别是</p>
+<h2 id="4-JVM-内存参数"><a href="#4-JVM-内存参数" class="headerlink" title="4. JVM 内存参数"></a>4. JVM 内存参数</h2><p>JVM 配置参数 -Xmx10240m -Xms10240m -Xmn5120m -XX:SurvivorRatio&#x3D;3 其最小内存值和Survivor区总大小分别是</p>
 <ul>
 <li>-Xmx 指虚拟机最大内存是多少  10240m(兆字节)</li>
 <li>-Xms 指虚拟机最小内存是多少  10240m(兆)</li>
@@ -339,25 +396,66 @@
 </ul>
 <p>新生代与老年代的比例：</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/dd5286c40fc54f77b24bf66d80f9063e" alt="新生代和老年代比例"></p>
-<h3 id="JVM-垃圾回收算法"><a href="#JVM-垃圾回收算法" class="headerlink" title="JVM 垃圾回收算法"></a>JVM 垃圾回收算法</h3><ol>
-<li><p>标记清除（<strong>大多不再使用</strong>）</p>
-<p>标记不会被清除的对象GC时不会被清除。</p>
+<h2 id="5-JVM-垃圾回收算法"><a href="#5-JVM-垃圾回收算法" class="headerlink" title="5. JVM 垃圾回收算法"></a>5. JVM 垃圾回收算法</h2><h3 id="5-1-标记垃圾算法"><a href="#5-1-标记垃圾算法" class="headerlink" title="5.1 标记垃圾算法"></a>5.1 标记垃圾算法</h3><h4 id="Ⅰ-引用计数法"><a href="#Ⅰ-引用计数法" class="headerlink" title="Ⅰ. 引用计数法"></a>Ⅰ. 引用计数法</h4><p>只要一个对象被其它对象引用，就把对象的计数加 1 ，当一个对象不再引用该对象，则让它的计数减 1，直到引用计数减到 0 ，说明不再有对象引用它，此时便可回收。</p>
+<p><strong>问题：当有循环引用时，会出现问题。</strong></p>
+<h4 id="Ⅱ-可达性分析算法"><a href="#Ⅱ-可达性分析算法" class="headerlink" title="Ⅱ. 可达性分析算法"></a>Ⅱ. 可达性分析算法</h4><p>被根对象直接或者间接引用的对象都会被标记，不会被回收。</p>
+<p>根对象：</p>
+<ul>
+<li><strong>虚拟机栈(栈帧中的本地变量表)中引用的对象。</strong><code>就是在方法中new的对象</code></li>
+<li><strong>方法区中静态属性引用的对象</strong><code>用static修饰的全局的静态的对象</code></li>
+<li><strong>方法区中常量引用的对象</strong><code>static final关键字</code></li>
+<li><strong>本地方法栈中(Native方法)引用的对象</strong><code>引用Native方法的所有对象</code></li>
+</ul>
+<h3 id="5-2-垃圾回收算法"><a href="#5-2-垃圾回收算法" class="headerlink" title="5.2 垃圾回收算法"></a>5.2 垃圾回收算法</h3><h4 id="Ⅰ-标记清除（大多不再使用）"><a href="#Ⅰ-标记清除（大多不再使用）" class="headerlink" title="Ⅰ. 标记清除（大多不再使用）"></a>Ⅰ. 标记清除（<strong>大多不再使用</strong>）</h4><p>标记不会被清除的对象GC时不会被清除。</p>
 <p>缺点：会有大量内存碎片，不利于使用（目前JVM垃圾回收已不再使用该算法）</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/8e786880859b455db6d2c1aeb863ac11" alt="标记清除算法"></p>
-</li>
-<li><p>标记整理（经常用于<strong>老年代</strong>的垃圾回收）</p>
-<p>标记清除的改进版，都是先是沿着GC Root（一定不会被清除的对象）进行标记（被引用了的对象），然后把没有使用的对象进行释放，最后多一步整理，把被标记的没有被GC的对象的内存空间整理到一起，留下的就是连续的内存，不会有内存碎片</p>
+<h4 id="Ⅱ-标记整理（经常用于老年代的垃圾回收）"><a href="#Ⅱ-标记整理（经常用于老年代的垃圾回收）" class="headerlink" title="Ⅱ.  标记整理（经常用于老年代的垃圾回收）"></a>Ⅱ.  标记整理（经常用于<strong>老年代</strong>的垃圾回收）</h4><p>标记清除的改进版，都是先是沿着GC Root（一定不会被清除的对象）进行标记（被引用了的对象），然后把没有使用的对象进行释放，最后多一步整理，把被标记的没有被GC的对象的内存空间整理到一起，留下的就是连续的内存，不会有内存碎片</p>
 <p>缺点：效率降低</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/921c94aca01742789f133b25e9709396" alt="标记整理算法"></p>
-</li>
-<li><p>标记复制（经常用于<strong>新生代</strong>的垃圾回收）</p>
-<p>标记复制在经过 GC Root 标记之后（已经知道哪些对象不需要回收），会把不需要回收的对象复制到一块连续的内存空间中，然后释放之前的所有内存空间。</p>
+<h4 id="Ⅲ-标记复制（经常用于新生代的垃圾回收）"><a href="#Ⅲ-标记复制（经常用于新生代的垃圾回收）" class="headerlink" title="Ⅲ.  标记复制（经常用于新生代的垃圾回收）"></a>Ⅲ.  标记复制（经常用于<strong>新生代</strong>的垃圾回收）</h4><p>标记复制在经过 GC Root 标记之后（已经知道哪些对象不需要回收），会把不需要回收的对象复制到一块连续的内存空间中，然后释放之前的所有内存空间。</p>
 <p>不会有碎片问题，效率也比标记整理高</p>
 <p>缺点：内存占用</p>
 <p><img src="https://s1.vika.cn/space/2023/04/17/e67acf70b0a049b882f4a2c1e0fe63df" alt="标记复制算法"></p>
-</li>
+<h2 id="6-四种引用"><a href="#6-四种引用" class="headerlink" title="6. 四种引用"></a>6. 四种引用</h2><ol>
+<li>强引用</li>
+<li>软引用</li>
+<li>弱引用</li>
+<li>虚引用</li>
+<li>终接器引用</li>
 </ol>
-<h3 id="GC和分代回收算法"><a href="#GC和分代回收算法" class="headerlink" title="GC和分代回收算法"></a>GC和分代回收算法</h3><ul>
+<h3 id="6-1-强引用"><a href="#6-1-强引用" class="headerlink" title="6.1 强引用"></a>6.1 强引用</h3><p>其实我们平时在用的所有的引用都属于强引用。比如，new了一个对象，同等号赋值给了一个变量，那么这个变量强引用了刚刚的对象。</p>
+<p>强引用的特点是，只要沿着GC Root的引用，能够找到他，那么他就不会被垃圾回收。</p>
+<blockquote>
+<p>只有所有GC Roots对象都不通过【强引用】引用该对象，该对象才能被垃圾回收。</p>
+</blockquote>
+<h3 id="6-2-软引用"><a href="#6-2-软引用" class="headerlink" title="6.2 软引用"></a>6.2 软引用</h3><p>软弱引用跟强引用的一个区别是，只要一个对象没有被直接的强引用所引用，那么当垃圾回收发生时都有可能被回收掉。</p>
+<p>当发生垃圾回收，回收完了还发现内存不够时，就会把软引用所引用的对象给释放掉，当然前提是没有其他强应用在引用它。</p>
+<blockquote>
+<ul>
+<li><p>在发生第一次垃圾回收时，发现内存不足，不会立刻回收软引用，第二次垃圾回收发现内存不足时才会把软引用回收。</p>
+</li>
+<li><p>可以配合引用队列来释放弱引用自身。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="6-3-弱引用"><a href="#6-3-弱引用" class="headerlink" title="6.3 弱引用"></a>6.3 弱引用</h3><p>也是当强引用没有引用它的时候，并且他的回收条件更宽松一些，</p>
+<p>只要发生了垃圾回收，不管是不是内存充足，都会把弱引用引用的对象回收掉。</p>
+<blockquote>
+<ul>
+<li><p>仅有弱引用引用该对象时，在垃圾回收时，无论内存是否充足，都会回收弱引用对象。</p>
+</li>
+<li><p>可以配合引用队列来释放弱引用自身。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="6-4-虚引用"><a href="#6-4-虚引用" class="headerlink" title="6.4 虚引用"></a>6.4 虚引用</h3><p>虚引用引用的对象被垃圾回收时，虚引用对象自己就会被放入引用队列，从而间接的有一个线程来调用虚引用对象的方法，然后调用 Unsafe 对象的 freeMemory 函数去释放直接内存。</p>
+<blockquote>
+<ul>
+<li>必须配合引用队列使用，主要配合 ByteBuffer 使用，被引用对象回收时，会将虚引用入队，由 Reference Handler 线程调用虚引用相关方法释放直接内存。</li>
+</ul>
+</blockquote>
+<h3 id="6-5-终结器引用"><a href="#6-5-终结器引用" class="headerlink" title="6.5 终结器引用"></a>6.5 终结器引用</h3><p>所有的 Java 对象都继承自 Object 父类，而 Object 里都有一个叫 finallize() 的方法，就是所谓的终结方法。</p>
+<h2 id="7-GC和分代回收算法"><a href="#7-GC和分代回收算法" class="headerlink" title="7. GC和分代回收算法"></a>7. GC和分代回收算法</h2><ul>
 <li>GC的目的在于实现无用对象内存自动释放，减少内存碎片、加快分配速度</li>
 <li>GC 要点<ol>
 <li>回收区域是堆内存，不包括虚拟机栈，在方法调用结束会自动释放方法占用内存</li>
@@ -368,7 +466,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="分代回收"><a href="#分代回收" class="headerlink" title="分代回收"></a>分代回收</h3><ol>
+<h2 id="8-分代回收"><a href="#8-分代回收" class="headerlink" title="8. 分代回收"></a>8. 分代回收</h2><ol>
 <li>伊甸园eden，最初对象都分配到这里，与幸存区合称新生代</li>
 <li>幸存区survivor，当伊甸园内存不足，回收后的幸存对象到这里，分成from和 to，采用标记复制算法</li>
 <li>老年代 old，当幸存区对象熬过几次回收(最多15次)，晋升到老年代(幸存区内存不足或大对象会导致提前晋升)</li>
@@ -389,7 +487,7 @@
 <p>Full GC新生代+老年代完整垃圾回收，暂停时间长，应尽力避免</p>
 </li>
 </ul>
-<h3 id="三色标记和并发漏标"><a href="#三色标记和并发漏标" class="headerlink" title="三色标记和并发漏标"></a>三色标记和并发漏标</h3><p>用三种颜色记录对象的标记状态</p>
+<h2 id="9-三色标记和并发漏标"><a href="#9-三色标记和并发漏标" class="headerlink" title="9. 三色标记和并发漏标"></a>9. 三色标记和并发漏标</h2><p>用三种颜色记录对象的标记状态</p>
 <ul>
 <li>黑色 - 已标记</li>
 <li>灰色 - 标记中</li>
