@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.vika.cn/space/2023/04/17/e522e70567b04ded87ecc13aaa954b33">
 <meta property="article:published_time" content="2023-04-08T13:44:36.267Z">
-<meta property="article:modified_time" content="2023-04-17T10:11:27.589Z">
+<meta property="article:modified_time" content="2023-04-24T04:28:49.149Z">
 <meta property="article:author" content="yhking">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -247,32 +247,34 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+    <h3><span id="前言">前言</span></h3><blockquote>
 <p>java集合与sql CRUD</p>
 </blockquote>
 <span id="more"></span>
 
-<h1 id="Java-SE-知识"><a href="#Java-SE-知识" class="headerlink" title="Java SE 知识"></a>Java SE 知识</h1><h5 id="Java面向对象的特征："><a href="#Java面向对象的特征：" class="headerlink" title="Java面向对象的特征："></a>Java面向对象的特征：</h5><blockquote>
+<h1><span id="java-se-知识">Java SE 知识</span></h1><!--toc-->
+
+<h3><span id="java面向对象的特征">Java面向对象的特征：</span></h3><blockquote>
 <p>封装：增加了代码的可维护性、复用性</p>
 <p>继承：已有类中派生的新类</p>
 <p>多态：三要素：继承，重写，父类引用指向子类对象  – Animal a &#x3D; new dog()，增加了代码的可移植性、健壮性</p>
 </blockquote>
-<h5 id="Java访问控制"><a href="#Java访问控制" class="headerlink" title="Java访问控制"></a>Java访问控制</h5><blockquote>
+<h3><span id="java访问控制">Java访问控制</span></h3><blockquote>
 <p>public(均可访问)、protected(包和子类)、default(同一个包中)、private(同一个类中使用)</p>
 </blockquote>
-<h5 id="lambda表达式（用于匿名内部类）"><a href="#lambda表达式（用于匿名内部类）" class="headerlink" title="lambda表达式（用于匿名内部类）"></a>lambda表达式（用于匿名内部类）</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> ()-&gt;&#123; &#125;;		<span class="comment">//匿名内部类中只能有一个方法</span></span><br><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> i-&gt;&#123; &#125;;	<span class="comment">//一个参数</span></span><br><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> (i,n)-&gt;&#123; &#125;;  <span class="comment">//两个参数</span></span><br></pre></td></tr></table></figure>
+<h3><span id="lambda表达式用于匿名内部类">lambda表达式（用于匿名内部类）</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> ()-&gt;&#123; &#125;;		<span class="comment">//匿名内部类中只能有一个方法</span></span><br><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> i-&gt;&#123; &#125;;	<span class="comment">//一个参数</span></span><br><span class="line"><span class="type">Eat</span> <span class="variable">eat</span> <span class="operator">=</span> (i,n)-&gt;&#123; &#125;;  <span class="comment">//两个参数</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型<T></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛型类、泛型方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Score</span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span> &lt;E&gt; <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(E e)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Score&lt;String&gt; score = <span class="keyword">new</span> <span class="title class_">Score</span>&lt;String&gt;(<span class="number">1</span>,<span class="string">&quot;1123&quot;</span>);  <span class="comment">//1.7之前</span></span><br><span class="line">Score&lt;String&gt; score = <span class="keyword">new</span> <span class="title class_">Score</span>&lt;&gt;(<span class="number">1</span>,<span class="string">&quot;1123&quot;</span>);	<span class="comment">//1.7之后</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型界限：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Score</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Number</span>&gt;&#123;&#125;	     <span class="comment">//泛型中只能使用Number以及其子类的类</span></span><br></pre></td></tr></table></figure>
+<h3><span id="泛型">泛型<t></t></span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//泛型类、泛型方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Score</span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span> &lt;E&gt; <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(E e)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Score&lt;String&gt; score = <span class="keyword">new</span> <span class="title class_">Score</span>&lt;String&gt;(<span class="number">1</span>,<span class="string">&quot;1123&quot;</span>);  <span class="comment">//1.7之前</span></span><br><span class="line">Score&lt;String&gt; score = <span class="keyword">new</span> <span class="title class_">Score</span>&lt;&gt;(<span class="number">1</span>,<span class="string">&quot;1123&quot;</span>);	<span class="comment">//1.7之后</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型界限：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Score</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Number</span>&gt;&#123;&#125;	     <span class="comment">//泛型中只能使用Number以及其子类的类</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);</span><br><span class="line">list.add(<span class="number">2</span>);</span><br><span class="line">list.add(<span class="number">3</span>);</span><br><span class="line">Iterator&lt;Integer&gt; iterator = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">	<span class="type">Integer</span> <span class="variable">next</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">	System.out.println(next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="迭代器">迭代器</span></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);</span><br><span class="line">list.add(<span class="number">2</span>);</span><br><span class="line">list.add(<span class="number">3</span>);</span><br><span class="line">Iterator&lt;Integer&gt; iterator = list.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">	<span class="type">Integer</span> <span class="variable">next</span> <span class="operator">=</span> iterator.next();</span><br><span class="line">	System.out.println(next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h5><p><img src="https://s1.vika.cn/space/2023/04/17/e522e70567b04ded87ecc13aaa954b33" alt="集合类"></p>
+<h3><span id="集合">集合</span></h3><p><img src="https://s1.vika.cn/space/2023/04/17/e522e70567b04ded87ecc13aaa954b33" alt="集合类"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">flowchart</span><br><span class="line">java.long.Object---&gt; Map:映射</span><br><span class="line">java.long.Object--&gt; Collection:集合</span><br><span class="line">Map:映射--&gt;HashMap:底层Hash表</span><br><span class="line">Map:映射--&gt;TreeMap:底层红黑树</span><br><span class="line"></span><br><span class="line">Collection:集合--&gt; Set:集合</span><br><span class="line">Collection:集合--&gt; List:列表</span><br><span class="line">Collection:集合--&gt; Queue:队列</span><br><span class="line">Set:集合--&gt;HashSet:底层Hash表</span><br><span class="line">Set:集合--&gt;TreeSet:底层红黑树</span><br><span class="line"></span><br><span class="line">List:列表--&gt;ArrayList:数组集合</span><br><span class="line">List:列表--&gt;linkList:链表集合/队列</span><br><span class="line"></span><br><span class="line">Queue:队列--&gt;linkList:链表集合/队列</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -301,10 +303,10 @@
 <blockquote>
 <p>守护线程：当所有线程都结束了，守护线程也会结束</p>
 </blockquote>
-<h1 id="springmvc工作流程"><a href="#springmvc工作流程" class="headerlink" title="springmvc工作流程"></a>springmvc工作流程</h1><blockquote>
+<h1><span id="springmvc工作流程">springmvc工作流程</span></h1><blockquote>
 <p>用户发送前端请求，由前端控制器DispatcharServlet查询对应的Contraller，<br>对应Contraller调用service层进行一些逻辑处理、持久化，最后返回一个ModelAndView模型，<br>再有视图解析器解析、渲染，最后响应给用户。</p>
 </blockquote>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><blockquote>
+<h1><span id="mysql">MySQL</span></h1><h3><span id="增">增</span></h3><blockquote>
 <p>创建用户</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> username@<span class="string">&#x27;%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;123456&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
@@ -318,7 +320,7 @@
 <p>插入数据:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tablename(id,name) <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;zhangsan&#x27;</span>);</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><blockquote>
+<h3><span id="删">删</span></h3><blockquote>
 <p>删除用户:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> username@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
@@ -334,7 +336,7 @@
 <p>删除数据:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> tablename <span class="keyword">where</span> age <span class="keyword">between</span> <span class="number">23</span> <span class="keyword">and</span> <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><blockquote>
+<h3><span id="改">改</span></h3><blockquote>
 <p>修改数据表数据:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> tablename <span class="keyword">set</span> age<span class="operator">=</span><span class="number">21</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 
@@ -356,9 +358,9 @@
 <p>查看</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"><span class="keyword">describe</span> tablename;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><blockquote>
+<h3><span id="查">查</span></h3><blockquote>
 </blockquote>
-<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><blockquote>
+<h3><span id="授权">授权</span></h3><blockquote>
 <p>授权用户全部权限:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> tablename <span class="keyword">to</span> username@<span class="string">&#x27;%&#x27;</span>;  #给已存在的用户授权</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> tablename <span class="keyword">to</span> username@<span class="string">&#x27;%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;123456&#x27;</span>  #新建用户并授权</span><br></pre></td></tr></table></figure>
 
@@ -366,7 +368,7 @@
 <p>取消授权:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">drop</span>,<span class="keyword">delete</span> <span class="keyword">on</span> tablename <span class="keyword">from</span> username@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line"><span class="operator">&gt;</span># 查看权限</span><br><span class="line"><span class="keyword">show</span> grants <span class="keyword">for</span> username@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="启动关闭"><a href="#启动关闭" class="headerlink" title="启动关闭"></a>启动关闭</h3><blockquote>
+<h3><span id="启动关闭">启动关闭</span></h3><blockquote>
 <p>启动：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">service mysqld start</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">/etc/init.d/mysqld start</span></span><br></pre></td></tr></table></figure>
 

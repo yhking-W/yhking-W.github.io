@@ -6,21 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.yhking.xyz">
-  <title>YHKING</title>
+  <title>八股文 | YHKING</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YHKING">
-<meta property="og:url" content="https://www.yhking.xyz/page/2/index.html">
+  <meta name="description" content="前言 其中包含了Redis篇、数据库篇、框架篇、微服务篇等题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="八股文">
+<meta property="og:url" content="https://www.yhking.xyz/2023/04/22/%E5%85%AB%E8%82%A1%E6%96%87/index.html">
 <meta property="og:site_name" content="YHKING">
+<meta property="og:description" content="前言 其中包含了Redis篇、数据库篇、框架篇、微服务篇等题">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/2f49c124d43847e2988bf6b9f3e2cb03">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/cd561f40c1a24c4995fac39baf545411">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/ecefc8395a0b4570b1a602d5863e0841">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/a4ac88df1f4b4843b3284b056e2d842d">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/98521347825e41a2ae1e83d05accb9b9">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/2ae88fe3f71e4f6eb128ffb2a4aeb09b">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/5e449bb944b8455f83db2702f9323701">
+<meta property="og:image" content="https://s1.vika.cn/space/2023/04/22/f4af9b8a6ef84150aa18365f11daba0b">
+<meta property="article:published_time" content="2023-04-22T04:44:29.795Z">
+<meta property="article:modified_time" content="2023-04-24T04:26:54.174Z">
 <meta property="article:author" content="yhking">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.vika.cn/space/2023/04/22/2f49c124d43847e2988bf6b9f3e2cb03">
   
   
     <link rel="icon" href="https://s1.vika.cn/space/2023/04/17/1ea57aab0ac944288a08bbf6500bd649">
@@ -215,27 +225,27 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-springbean的调用链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-八股文" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">Spring bean 的调用链</a>
-	
+    <h1 class="article-title" itemprop="name">
+      八股文
     </h1>
   
 
 
   
   
-<a href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/" class="archive-article-date">
-        <time datetime="2023-04-08T10:03:35.097Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2023/04/22/%E5%85%AB%E8%82%A1%E6%96%87/" class="archive-article-date">
+        <time datetime="2023-04-22T04:44:29.795Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-22</time>
 </a>
 
   
@@ -244,16 +254,279 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>spring 的一些执行过程，如ioc的加载过程，bean的生命周期，aop执行的时机。</p>
+    <h3><span id="前言">前言</span></h3><blockquote>
+<p>其中包含了Redis篇、数据库篇、框架篇、微服务篇等题</p>
 </blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/#more">more >></a>
-    
-    
+<span id="more"></span>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#redis-%E7%AF%87">Redis 篇</a><ul>
+<li><a href="#redis%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">redis使用场景</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98">缓存</a><ul>
+<li><a href="#%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F">缓存穿透</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF">缓存击穿</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9">缓存雪崩</a></li>
+<li><a href="#%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7">双写一致性</a></li>
+<li><a href="#%E6%8C%81%E4%B9%85%E5%8C%96">持久化</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5">数据过期策略</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="redis-篇">Redis 篇</span></h1><h2><span id="redis使用场景">redis使用场景</span></h2><p><img src="https://s1.vika.cn/space/2023/04/22/2f49c124d43847e2988bf6b9f3e2cb03" alt="redis使用场景"></p>
+<p>其中 缓存、分布式锁是比较常见的。</p>
+<p>其他的还有 <strong>redis集群</strong>、<strong>redis事务</strong></p>
+<h2><span id="缓存">缓存</span></h2><ul>
+<li>缓存穿透：请求不存在的 key</li>
+<li>缓存击穿：Redis 中 key 过期，请求数据库</li>
+<li>缓存雪崩：大量 key 过期或 Redis 宕机</li>
+</ul>
+<h3><span id="缓存穿透">缓存穿透</span></h3><p>正常使用 redis 的情况</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/cd561f40c1a24c4995fac39baf545411" alt="正常使用redis"></p>
+<p><strong>缓存穿透</strong>：查询一个<strong>不存在</strong>的数据，myqsl查询不到数据也不会直接写入缓存，就会导致每次请求都会查询数据库。</p>
+<p><strong>解决方案一</strong>：缓存空数据，查询返回的空数据，让把这个空数据写入缓存。</p>
+<p>优点：实现简单</p>
+<p>缺点：大量数据都为空，会消耗内存，可能发生不一致问题（本来查询的数据为空，存入缓存，后来添加了该数据，但是缓存仍然为空）。</p>
+<p><strong>解决方案二</strong>：布隆过滤器</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/ecefc8395a0b4570b1a602d5863e0841" alt="添加布隆过滤器"></p>
+<p>优点：内存占用较少，没有多余key</p>
+<p>缺点：实现复杂，存在误判</p>
+<h3><span id="缓存击穿">缓存击穿</span></h3><p>缓存击穿：给某个 key 设置了过期时间，当 key 过期的时候，恰好这时间点对这个 key 有大量的并发请求，这些请求可能会瞬间把 DB 压垮</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/a4ac88df1f4b4843b3284b056e2d842d" alt="缓存击穿"></p>
+<p><strong>解决方案一</strong>：互斥锁（分布式锁）</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/98521347825e41a2ae1e83d05accb9b9" alt="互斥锁"></p>
+<blockquote>
+<p>特点：强一致性，但是性能较差（需要等待互斥锁）</p>
+</blockquote>
+<p><strong>解决方案二</strong>：逻辑过期</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/2ae88fe3f71e4f6eb128ffb2a4aeb09b" alt="逻辑过期"></p>
+<blockquote>
+<p>特点：高可用，性能较优（不需要等待互斥锁）</p>
+</blockquote>
+<h3><span id="缓存雪崩">缓存雪崩</span></h3><p>缓存雪崩：在同一时间段大量的缓存key同时失效或者 Redis 服务宕机，导致大量请求到达数据库，给数据库带来巨大压力。</p>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>给不同的 key 的 TTL（过期时间）添加随机值</li>
+<li>利用 Redis 集群提高服务的可用性（Redis宕机情况）        哨兵模式、集群模式</li>
+<li>给缓存业务添加降级限流策略（可作为系统的保底策略，适用于穿透、击穿、雪崩）        ngxin或者spring cloud gateway</li>
+<li>给业务添加多级缓存</li>
+</ul>
+<p>一道面试题</p>
+<blockquote>
+<p>面试官:    什么是缓存雪崩 ?怎么解决 ?</p>
+<p>答：</p>
+<p>缓存雪崩意思是设置缓存时采用了相同的过期时间，导致缓存在某一时刻同时失效，请求全部转发到数据库，数据库 瞬时压力过重雪崩。与缓存击穿的区别: 雪崩是很多key，击穿是某一个key缓存。</p>
+<p>解决方案主要是可以将缓存失效时间分散开，比如可以在原有的失效时间基础上增加一个随机值，比如1-5分钟随机，这样每一个缓存的过期时间的重复率就会降低，就很难引发集体失效的事件。</p>
+</blockquote>
+<h3><span id="双写一致性">双写一致性</span></h3><p>双写一致性：缓存 和 数据库 保持数据一致</p>
+<p>根据业务场景可分为：<strong>要求高一致性</strong> 和 <strong>允许延迟一致性</strong></p>
+<p>读写数据流程</p>
+<ul>
+<li><p>读数据：查询缓存，<strong>命中</strong>，直接返回；<strong>未命中</strong>，查数据库，写入缓存，设置超时时间</p>
+</li>
+<li><p>写数据：<strong>延迟双删</strong>（极大降低脏数据风险，但仍可能出现脏数据）</p>
+<blockquote>
+<p>删除缓存    —&gt;   修改数据库    —(延时)—&gt;   删除缓存</p>
+<p>延时的目的：为了等待主数据库往从数据库同步数据</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>保持强一致性</strong>：使用<strong>读写锁</strong>，读加共享锁，写加排他锁。当然性能必然会下降</p>
+<p><strong>允许短暂不一致</strong></p>
+<ul>
+<li><p>异步通知保持最终一致性</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/5e449bb944b8455f83db2702f9323701" alt="异步通知保持一致性"></p>
+</li>
+<li><p>基于 Canal 的异步通知</p>
+<p><img src="https://s1.vika.cn/space/2023/04/22/f4af9b8a6ef84150aa18365f11daba0b" alt="基于canal通知保持一致性"></p>
+</li>
+</ul>
+<p>一道面试题</p>
+<blockquote>
+<p>面试官:  redis做为缓存，mysql的数据如何与redis进行同步呢? (双写一致性)</p>
+<p>答：我最近做的这个项目，里面有xxxx (根据自己的简历上写)的功能，数据同步可以有一定的延时(符合大部分业务)<br>我们当时采用的阿里的canal组件实现数据同步:不需要更改业务代码，部署一个canal服务。canal服务把自己伪装成mysql的一个从节点，当mysql数据更新以后，canal会读取binlog数据，然后在通过canal的客户端获取到数据，更新缓存即可。</p>
+</blockquote>
+<h3><span id="持久化">持久化</span></h3><ol>
+<li>RDB</li>
+<li>AOF</li>
+</ol>
+<p><strong>RDB</strong> 全称 Redis Database Backup file（Redis数据备份文件），也叫数据库备份快照。就是把内存中的所有数据记录到磁盘中，当 Redis 实例故障重启后，从磁盘读取快照文件，回复数据。</p>
+<p>主动备份</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># redis-cli</span></span><br><span class="line">127.0.0.1:6379&gt;save	<span class="comment"># 由Redis主线程执行RDB，会阻塞所有命令</span></span><br><span class="line">ok</span><br><span class="line">127.0.0.1：6379&gt;bgsave <span class="comment"># 开启子线程执行RDB，避免主线程受到干扰</span></span><br><span class="line">Background saving started</span><br></pre></td></tr></table></figure>
+
+<p>被动备份，Redis 内部有出发 RDB 的机制，可以在 redis.conf 文件中找到，格式如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 900秒内，至少有一个 key 被修改，则执行bgsave</span></span><br><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 600 10000</span><br></pre></td></tr></table></figure>
+
+<p>RDB的执行原理：以后补充</p>
+<p><strong>AOF</strong> 全称 Append Only File（追加文件）。Redis 处理的每一个命令都会记录在 AOF 文件，可看作是命令日志文件。</p>
+<p>AOF 默认是关闭的，需要在 redis.conf 配置文件中开启；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是否开启 AOF，默认为 no</span></span><br><span class="line">appendonly <span class="built_in">yes</span></span><br><span class="line"><span class="comment"># AOF的文件名称</span></span><br><span class="line">appendfilename <span class="string">&quot;appendonly.aof&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>AOF 的命令记录的频率，也可以通过 redis.conf 文件配置；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表示每执行一次写命令，立即记录到AOF文件</span></span><br><span class="line">appendfsync always</span><br><span class="line"><span class="comment"># 写命令执行完先放入AOF缓冲区，然后表示每隔1秒将缓冲区数据写到AOF文件，是默认方案</span></span><br><span class="line">appendfsync everysec</span><br><span class="line"><span class="comment"># 写命令执行完先放入AOF缓冲区，由操作系统决定何时将缓冲区内容写回磁盘</span></span><br><span class="line">appendfsync no</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>刷盘时机</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Always</td>
+<td>同步刷盘</td>
+<td>可靠性高，几乎不丢失数据</td>
+<td>性能影响大</td>
+</tr>
+<tr>
+<td>everysec</td>
+<td>每秒刷盘</td>
+<td>性能适中</td>
+<td>最多丢失1秒数据</td>
+</tr>
+<tr>
+<td>no</td>
+<td>操作系统控制</td>
+<td>性能最好</td>
+<td>可靠性较差，可能丢失大量数据</td>
+</tr>
+</tbody></table>
+<p><strong>对比</strong></p>
+<p>RDB和AOF各有自己的优缺点，如果对数据安全性要求较高，在实际开发中往往会<strong>结合两者</strong>来使用</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RDB</th>
+<th>AOF</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>持久化方式</td>
+<td>定时对整个内存做快照</td>
+<td>记录每一次执行的命令</td>
+</tr>
+<tr>
+<td>数据完整性</td>
+<td>不完整，两次备份之间会丢失</td>
+<td>相对完整，取决于刷盘策略</td>
+</tr>
+<tr>
+<td>文件大小</td>
+<td>会有压缩，文件体积小</td>
+<td>记录命令，文件体积很大</td>
+</tr>
+<tr>
+<td>宕机恢复速度</td>
+<td>很快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>数据恢复优先级</td>
+<td>低，因为数据完整性不如AOF</td>
+<td>高，因为数据完整性更高</td>
+</tr>
+<tr>
+<td>系统资源占用</td>
+<td>高，大量CPU和内存消耗</td>
+<td>低，主要是磁盘IO资源。但AOF重写时会占用大量CPU和内存资源</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>可以容忍数分钟的数据丢失，追求更快的启动速度</td>
+<td>对数据安全性要求较高常见</td>
+</tr>
+</tbody></table>
+<p>一道面试题</p>
+<blockquote>
+<p><strong>面试官</strong>：redis做为缓存，数据的持久化是怎么做的?</p>
+<p><strong>答</strong>：在Redis中提供了两种数据持久化的方式: 1、RDB 2、AOF</p>
+<p><strong>面试官</strong>：这两种持久化方式有什么区别呢?</p>
+<p><strong>答</strong>：RDB是一个快照文件，它是把redis内存存储的数据写到磁盘上，当redis实例宕机恢复数据的时候，方便从RDB的快照文件中恢复数据。<br>AOF的含义是追加文件，当redis操作写命令的时候，都会存储这个文件中，当redis实例宕机恢复数据的时候，会从这个文件中再次执行一遍命令来恢复数据</p>
+<p><strong>面试官</strong>：这两种方式，哪种恢复的比较快呢?</p>
+<p><strong>答</strong>：RDB因为是二进制文件，在保存的时候体积也是比较小的，它恢复的比较快，但是它有可能会丢数据，我们通常在项目中也会使用AOF来恢复数据，虽然AOF恢复的速度慢一些，但是它丢数据的风险要小很多，在AOF文件中可以设置刷盘策略，当时设置的就是每秒批量写入一次命令</p>
+</blockquote>
+<h3><span id="数据过期策略">数据过期策略</span></h3><ul>
+<li><p>惰性删除策略<br>惰性删除：设置该key过期时间后，我们不去管它，当需要该key时，我们在检查其是否过期，如果过期，我们就删掉它，反之返回该key</p>
+<p>优点:对CPU友好，只会在使用该key时才会进行过期检查，对于很多用不到的key不用浪费时间进行过期检查</p>
+<p>缺点:对内存不友好，如果一个key已经过期，但是一直没有使用，那么该kev就会一直存在内存中，内存永远不会释放</p>
+</li>
+<li><p>定期删除策略</p>
+<p>定期删除：每隔一段时间，我们就对一些key进行检查，删除里面过期的key(从一定数量的数据库中取出一定数量的随机key进行检查，并删除其中的过期key)。</p>
+<p>定期清理有两种模式：</p>
+<ul>
+<li>SLOW模式是定时任务，执行频率默认为10hz，每次不超过25ms，以通过修改配置文件redis.conf 的hz 选项来调<br>整这个次数</li>
+<li>FAST模式执行频率不固定，但两次间隔不低于2ms，每次耗时不超过1ms</li>
+</ul>
+<p>优点：可以通过限制删除操作执行的时长和频率来减少删除操作对 CPU 的影响。另外定期删除，也能有效释放过期键<br>占用的内存。</p>
+<p>缺点：难以确定删除操作执行的时长和频率</p>
+</li>
+</ul>
+<p>Redis的过期删除策略：<strong>惰性删除</strong> + <strong>定期删除</strong>两种策略进行配合使用</p>
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>多谢（回礼）！<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="https://s1.vika.cn/space/2023/04/17/c468c729b9014d23ba643e8cde4457ca">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="https://s1.vika.cn/space/2023/04/17/52c8959e785a4600a1e175ce1d289e54">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          yhking
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://www.yhking.xyz/2023/04/22/八股文/" title="八股文" target="_blank">https://www.yhking.xyz/2023/04/22/八股文/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -267,10 +540,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -278,16 +547,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/springbean%E7%9A%84%E8%B0%83%E7%94%A8%E9%93%BE/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://www.yhking.xyz/2023/04/22/%E5%85%AB%E8%82%A1%E6%96%87/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/18/rabbitmq/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RabbitMQ基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -308,825 +637,14 @@
 
 
 
-  
-    <article id="post-Scrapy的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">Scrapy的基础使用</a>
-	
-    </h1>
-  
 
 
-  
-  
-<a href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
 
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Scrapy是适用于Python的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/9815698">自动化测试</a>。Scrapy吸引人的地方在于它是一个框架，任何人都可以根据需求方便的修改。它也提供了多种类型爬虫的基类，如BaseSpider、sitemap爬虫等，最新版本又提供了web2.0爬虫的支持。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-    
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">frame</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Scrapy%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-zsh美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">终端美化</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.099Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Zsh（Z-shell）是一款用于交互式使用的shell，也可以作为脚本解释器来使用。其包含了 bash，ksh，tcsh 等其他shell中许多优秀功能，也拥有诸多自身特色。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beauty</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/zsh%E7%BE%8E%E5%8C%96/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Qv2ray的安装与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">Linux图形化界面-Qv2ray的安装与使用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.084Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Linux 科学上网，使用Qv2ray客户端</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/Qv2ray%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux安装pip" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/linux%E5%AE%89%E8%A3%85pip/">Linux安装pip</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/linux%E5%AE%89%E8%A3%85pip/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:56.068Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>pip 是一个现代的，通用的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Python">Python</a> 包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/linux%E5%AE%89%E8%A3%85pip/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/linux%E5%AE%89%E8%A3%85pip/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux安装MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/linux%E5%AE%89%E8%A3%85MySQL/">Linux安装MySQL</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/linux%E5%AE%89%E8%A3%85MySQL/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:55.974Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>MySQL是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>，由瑞典MySQL AB 公司开发，属于 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle">Oracle</a> 旗下产品。MySQL 是最流行的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/696511">关系型数据库管理系统</a>之一，在 WEB 应用方面，MySQL是最好的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RDBMS/1048260">RDBMS</a> (Relational Database Management System，关系数据库管理系统) 应用软件之一。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/linux%E5%AE%89%E8%A3%85MySQL/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/linux%E5%AE%89%E8%A3%85MySQL/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">Git的使用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:55.967Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>Git（读音为&#x2F;gɪt&#x2F;）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。是 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429?fromtitle=Linus%20Torvalds&fromid=9336769">Linus Torvalds</a> 为了帮助管理 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux/27050">Linux </a>内核开发而开发的一个开放源码的版本控制软件。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tools</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C语言复习新知" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E6%96%B0%E7%9F%A5/">C语言复习新知</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E6%96%B0%E7%9F%A5/" class="archive-article-date">
-        <time datetime="2023-04-08T02:35:55.965Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>C语言的重要程度，自然不用说，数据结构这门课，一般都是用C&#x2F;C++语言来编写程序案例，所以题目上一般也都要求使用C&#x2F;C++编写程序，只能又看了一遍C，自然C++比C好用，但是C++现在也没时间重新学习，所以C语言是最佳选择，那么接下来就看一下新get到的知识。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E6%96%B0%E7%9F%A5/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">study</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/C%E8%AF%AD%E8%A8%80%E5%A4%8D%E4%B9%A0%E6%96%B0%E7%9F%A5/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网址购买与域名解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/08/%E7%BD%91%E5%9D%80%E8%B4%AD%E4%B9%B0%E4%B8%8E%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">域名购买和DNS解析</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/08/%E7%BD%91%E5%9D%80%E8%B4%AD%E4%B9%B0%E4%B8%8E%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-        <time datetime="2023-04-07T17:53:51.668Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>域名购买和DNS解析。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/08/%E7%BD%91%E5%9D%80%E8%B4%AD%E4%B9%B0%E4%B8%8E%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/08/%E7%BD%91%E5%9D%80%E8%B4%AD%E4%B9%B0%E4%B8%8E%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使用hexo搭建我的个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/04/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建我的个人博客</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/04/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-        <time datetime="2023-04-07T14:03:11.241Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-07</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>使用hexo和github搭建自己的博客小站</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2023/04/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/04/07/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -1166,8 +684,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
